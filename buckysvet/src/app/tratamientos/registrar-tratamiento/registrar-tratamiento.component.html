@@ -1,0 +1,31 @@
+<div class="tratamiento-container">
+    <h2>Registrar Tratamiento</h2>
+    <form (ngSubmit)="registrarTratamiento()">
+      <label for="fecha">Fecha:</label>
+      <input type="date" [(ngModel)]="tratamiento.fecha" name="fecha" required>
+  
+      <label for="descripcion">Descripción:</label>
+      <input type="text" [(ngModel)]="tratamiento.descripcion" name="descripcion" required>
+  
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" [(ngModel)]="tratamiento.cantidad" name="cantidad" required>
+  
+      <label for="mascota">Mascota:</label>
+      <select [(ngModel)]="tratamiento.mascota.nombre" name="mascota" required>
+        <option *ngFor="let mascota of mascotas" [value]="mascota.mascotaId">{{ mascota.nombre }}</option>
+      </select>
+  
+      <label for="medicamento">Medicamento:</label>
+      <select [(ngModel)]="tratamiento.medicamento.nombre" name="medicamento" required>
+        <option *ngFor="let medicamento of medicamentos" [value]="medicamento.idMedicamento">{{ medicamento.nombre }}</option>
+      </select>
+  
+      <label for="veterinario">Veterinario:</label>
+      <select [(ngModel)]="tratamiento.veterinario.nombre" name="veterinario" required>
+        <option *ngFor="let veterinario of veterinarios" [value]="veterinario.idVeterinario">{{ veterinario.nombre }}</option>
+      </select>
+  
+      <button type="submit">Registrar Tratamiento</button>
+    </form>
+  </div>
+  

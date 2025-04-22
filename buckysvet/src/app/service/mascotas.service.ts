@@ -125,4 +125,8 @@ export class MascotasService {
   eliminar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  obtenerMascotasPorDuenoId(duenoId: number): Observable<Mascota[]> {
+    return this.http.get<Mascota[]>(`${this.apiUrl}/dueno/${duenoId}`);
+  }
 }

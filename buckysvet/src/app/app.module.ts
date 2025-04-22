@@ -31,6 +31,7 @@ import { ProgramaCitaPresencialComponent } from './paginas/programa-cita-presenc
 import { SedesComponent } from './paginas/sedes/sedes.component';
 import { FormularioDuenoComponent } from './shared-duenos/formulario-dueno/formulario-dueno.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TratamientoComponent } from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     PlanPacientesCronicosComponent,
     ProgramaCitaPresencialComponent,
     SedesComponent,
-    FormularioDuenoComponent
+    FormularioDuenoComponent,
+    TratamientoComponent
   ],
   imports: [
     BrowserModule,

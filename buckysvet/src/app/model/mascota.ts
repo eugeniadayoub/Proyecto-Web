@@ -9,7 +9,7 @@ export interface Mascota {
     enfermedad?: string;
     estado: string;
     imagenUrl: string;
-    dueno?: Dueno;
+    dueno: Dueno;
 }
 
   

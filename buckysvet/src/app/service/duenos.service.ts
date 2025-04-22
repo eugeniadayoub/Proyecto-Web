@@ -105,8 +105,7 @@ export class DuenosService {
         email: `${nombre.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/ /g, '')}@email.com`,
         telefono: 3000000000 + i,
         imagenUrl,
-        password: Math.random().toString(36).slice(-8),
-        mascotas
+        password: Math.random().toString(36).slice(-8)
       });
     }
   }

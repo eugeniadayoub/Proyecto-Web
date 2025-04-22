@@ -9,5 +9,4 @@ export interface Dueno {
     telefono : number;
     imagenUrl : string;
     password : string;
-    mascotas?: Mascota[];
 }

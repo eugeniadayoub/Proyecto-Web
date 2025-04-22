@@ -13,7 +13,7 @@ export class VeterinarioService {
   constructor(private http: HttpClient) { }
 
   // Obtener todos los veterinarios
-  obtenerVeterinarios(): Observable<Veterinario[]> {
+  obtenerTodos(): Observable<Veterinario[]> {
     return this.http.get<Veterinario[]>(this.apiUrl);
   }
 
