@@ -1,0 +1,164 @@
+<app-header></app-header>
+<main>
+
+    <!-- Sección de Imagen Principal -->
+    <section class="hospital-image">
+       <img src="assets/images/images-hospital-sede-centro/FotoLocal.png" alt="Hospital Veterinario 24H - Sede Norte">
+   </section>
+
+   <!-- Sección de Información del Hospital Veterinario 24H - Sede Norte -->
+   <section class="hospital-info">
+       <div class="container">
+           <div class="hospital-text">
+               <h2>NUESTRO HOSPITAL VETERINARIO CUENTA CON LOS MÁS ALTOS ESTÁNDARES DE CALIDAD EN MEDICINA VETERINARIA</h2>
+               <p>Disponibles en Colombia, enfocados en mejorar la calidad de vida de nuestras mascotas.</p>
+               <p>En el Hospital Bucky's Vet Sede Centro, contamos con urgencias veterinarias, vacunación, desparasitación, cirugías, consultas médicas, hospitalización, baño, peluquería y tratamientos especializados para tu mascota.</p>
+           </div>
+           <div class="hospital-details">
+               <h3>El Hospital Bucky's Vet Sede Centro tiene más de 350 M2 y parqueadero gratis para clientes.</h3>
+               <p><strong>DIRECCIÓN:</strong> Carrera 7 # 25-50, Chapinero, Bogotá</p>
+               <p><strong>HORARIOS:</strong> 24 horas todos los días</p>
+               <p><strong>TELÉFONOS:</strong> Tel: 601 8765432 - Cel: 320 8765432</p>
+           </div>
+       </div>
+   </section>
+
+   <!-- Sección de Servicios del Hospital Veterinario 24H - Sede Norte -->
+   <section class="waiting-room">
+       <div class="container">
+           <div class="waiting-room-image">
+               <img src="assets/images/images-hospital-sede-centro/waiting-room.jpg" alt="Sala de espera exclusiva">
+           </div>
+           <div class="waiting-room-text">
+               <h2>SALA DE ESPERA EXCLUSIVA PARA PERROS Y SUS TUTORES</h2>
+               <p>ESTO AYUDA A HACER MÁS GRATA LA ESPERA.</p>
+           </div>
+       </div>
+   </section>
+
+   <!-- Sección de Consultorios del Hospital Veterinario 24H - Sede Norte -->
+   <section class="consultorios">
+       <div class="container">
+           <h2>4 CONSULTORIOS EXCLUSIVOS PARA PERROS, CON ESPACIOS AMPLIOS Y MATERIAL EDUCATIVO QUE HACEN QUE LA VISITA AL MÉDICO SEA MÁS AGRADABLE PARA PERROS Y TUTORES</h2>
+           <div class="consultorios-gallery">
+               <img src="assets/images/images-hospital-sede-centro/consultorio1.jpg" alt="Consultorio 1">
+               <img src="assets/images/images-hospital-sede-centro/consultorio2.jpeg" alt="Consultorio 2">
+               <img src="assets/images/images-hospital-sede-centro/consultorio3.jpg" alt="Consultorio 3">
+           </div>
+       </div>
+   </section>
+
+   <!-- Sección de Espacios separados para gatos -->
+   <section class="espacios-gatos">
+       <div class="container">
+           <h2>ESPACIOS SEPARADOS PARA GATOS</h2>
+           <div class="gatos-content">
+               <div class="gato-item">
+                   <img src="assets/images/images-hospital-sede-centro/consultorioGatos1.jpg" alt="Consultorio exclusivo para gatos">
+                   <p>El tener un consultorio exclusivo para gatos, evita el olor de los perros durante la consulta reduciendo la ansiedad de la mascota. Los consultorios cuentan con gimnasios que mejoran la experiencia del gato.</p>
+               </div>
+               <div class="gato-item">
+                   <img src="assets/images/images-hospital-sede-centro/consultorioGatos2.jpg" alt="Sala de espera exclusiva para gatos">
+                   <p>Sala de espera exclusiva para gatos y sus tutores, ayuda a minimizar el estrés en los gatos. Cuenta con atriles que permiten dejar los guacales en lugares altos, que los hace sentir más seguros.</p>
+               </div>
+           </div>
+       </div>
+   </section>
+   
+   <!-- Sección de Citas -->
+   <section class="consulta-medica">
+       <div class="container">
+           <h2>SOLICITA UNA CONSULTA MÉDICA</h2>
+           <p class="subtitulo">RECUERDA QUE LA PRIMERA CONSULTA EN NUESTRAS CLÍNICAS ES GRATIS</p>
+
+           <form action="#" method="POST" class="formulario-cita">
+               <div class="form-group">
+                   <input type="text" name="nombre" placeholder="Nombre*" required>
+                   <input type="text" name="apellidos" placeholder="Apellidos*" required>
+               </div>
+               <div class="form-group">
+                   <input type="email" name="email" placeholder="Email*" required>
+                   <input type="tel" name="telefono" placeholder="📞 321 1234567" required>
+               </div>
+               <div class="form-group">
+                   <input type="text" name="mascota" placeholder="Nombre de la Mascota*" required>
+                   <select name="clase-mascota" required>
+                       <option value="" disabled selected>Clase de Mascota</option>
+                       <option value="perro">Perro</option>
+                       <option value="gato">Gato</option>
+                   </select>
+               </div>
+               <div class="form-group">
+                   <input type="date" name="fecha" required>
+                   <select name="motivo-cita" required>
+                       <option value="" disabled selected>Motivo de la Cita</option>
+                       <option value="estelizacion">Esterilización</option>
+                       <option value="vacunacion">Vacunación</option>
+                       <option value="desparacitación">Desparasitación</option>
+                       <option value="consultya médica">Consulta Médica</option>
+                       <option value="profilaxis">Profilaxis</option>
+                       <option value="asesoria de nutrición">Asesoría de nutrición</option>
+                       <option value="consulta geriátrica">Consulta Geriátrica</option>
+                       <option value="primera consulta gratis">Primera Consulta GRATIS</option>
+                       <option value="otros">Otros</option>
+                   </select>
+               </div>
+               <div class="form-group">
+                   <select name="sede" required>
+                       <option value="" disabled selected>Selecciona una Sede</option>
+                       <option value="norte">Sede Norte</option>
+                       <option value="centro">Sede Centro</option>
+                   </select>
+               </div>
+               <div class="input-checkbox">
+                   <input type="checkbox" name="acepto-politica" required>
+                   <label>He leído y acepto las políticas de privacidad <a href="#">Leer Políticas de privacidad</a></label>
+               </div>
+               <button type="submit" class="boton-enviar">PEDIR UNA CITA</button>
+           </form>
+       </div>
+   </section>
+   
+   <!-- Sección de Salas de Visita para Mascotas -->
+   <section class="salas-visita">
+       <div class="container">
+           <div class="texto">
+               <h2>2 SALAS DE VISITA PARA MASCOTAS HOSPITALIZADAS</h2>
+               <p>Permite que los tutores puedan tener un espacio íntimo con sus mascotas.</p>
+           </div>
+           <div class="imagen">
+               <img src="assets/images/images-hospital-sede-centro/sala-espera-hospitalizacion.jpg" alt="Sala de Visita para Mascotas">
+           </div>
+       </div>
+   </section>
+   
+   <!-- Sección de Sala de Rayos X, Ecografía, Dos QuirófANos y Dos Salas de Hospitalización Separadas -->
+   <section class="rayosx-quirófanos">
+       <div class="container">
+           <h2>SALA DE RAYOS X, ECOGRAFÍA, DOS QUIRÓFANOS Y DOS SALAS DE HOSPITALIZACIÓN SEPARADAS, UNA PARA PERROS Y OTRA PARA GATOS.</h2>
+           <div class="imagenes">
+               <img src="assets/images/images-hospital-sede-centro/rayos-x.jpg" alt="Sala de Rayos X">
+               <img src="assets/images/images-hospital-sede-centro/ecografias.jpg" alt="Ecografía">
+               <img src="assets/images/images-hospital-sede-centro/quirofanos.jpeg" alt="Quirofanos">
+           </div>
+       </div>
+   </section>
+   
+   <!-- Sección de Peluquería -->
+   <section class="peluqueria-banos">
+       <div class="container">
+           <p>Servicio de peluquería, donde hay área de baño exclusiva para perros y otra para gatos, disminuyendo la ansiedad de las mascotas.</p>
+           <a href="BañosBuckysVet.html" class="boton-bano" target="_blank">SOLICITA TU PRIMER BAÑO GRATIS</a>
+       </div>
+   </section>
+   
+   <!-- Sección de Mapa del Hospital -->
+   <section class="mapa-hospital">
+       <div class="container">
+           <img src="assets/images/images-hospital-sede-centro/mapa_centro.png" alt="Ubicación del Hospital Bucky's Vet" class="imagen-mapa">
+       </div>
+   </section>
+
+</main>
+
+<app-footer></app-footer>

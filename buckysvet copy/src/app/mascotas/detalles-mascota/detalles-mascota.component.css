@@ -1,0 +1,53 @@
+/* Contenedor principal centrado */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Fondo claro */
+    padding: 20px;
+}
+
+/* Estilo de la tarjeta */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Títulos */
+.titulo {
+    color: #23969F;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Imagen de la mascota */
+.img-fluid {
+    border: 3px solid #5EB896;
+    border-radius: 10px;
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+/* Botón de volver */
+.btn.btn-primary {
+    background-color: #23969F !important;
+    border-color: #23969F !important;
+    color: white !important;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #5EB896 !important;
+    border-color: #5EB896 !important;
+}

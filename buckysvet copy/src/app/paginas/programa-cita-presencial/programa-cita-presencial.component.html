@@ -1,0 +1,61 @@
+<app-header></app-header>
+<main>
+
+    <!-- Sección de Programa tu cita presencial -->     
+    <section class="agenda-citas">
+        <div class="contenedor">
+            <h2>Agenda tu Cita en <span class="resaltado">Bucky's Vet</span></h2>
+            <p>En <strong>Bucky's Vet</strong>, sabemos que el tiempo es valioso, tanto para ti como para tu mascota. 
+                Por eso, hemos diseñado un sistema de agendamiento de citas fácil, rápido y disponible las 24 horas del día.
+            </p>
+            <p>Llena el siguiente formulario para agendar una consulta. Nuestro equipo se pondrá en contacto contigo para confirmarla.</p>
+        </div>
+
+        <form action="#" method="POST" class="formulario-cita">
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre*" required>
+                <input type="text" name="apellidos" placeholder="Apellidos*" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email*" required>
+                <input type="tel" name="telefono" placeholder="📞 321 1234567" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="mascota" placeholder="Nombre de la Mascota*" required>
+                <select name="clase-mascota" required>
+                    <option value="" disabled selected>Clase de Mascota</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="date" name="fecha" required>
+                <select name="motivo-cita" required>
+                    <option value="" disabled selected>Motivo de la Cita</option>
+                    <option value="estelizacion">Esterilización</option>
+                    <option value="vacunacion">Vacunación</option>
+                    <option value="desparacitación">Desparasitación</option>
+                    <option value="consultya médica">Consulta Médica</option>
+                    <option value="profilaxis">Profilaxis</option>
+                    <option value="asesoria de nutrición">Asesoría de nutrición</option>
+                    <option value="consulta geriátrica">Consulta Geriátrica</option>
+                    <option value="primera consulta gratis">Primera Consulta GRATIS</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="sede" required>
+                    <option value="" disabled selected>Selecciona una Sede</option>
+                    <option value="norte">Sede Norte</option>
+                    <option value="centro">Sede Centro</option>
+                </select>
+            </div>
+            <div class="input-checkbox">
+                <input type="checkbox" name="acepto-politica" required>
+                <label>He leído y acepto las políticas de privacidad <a href="#">Leer Políticas de privacidad</a></label>
+            </div>
+            <button type="submit" class="boton-enviar">PEDIR UNA CITA</button>
+        </form>
+    </section>
+</main>
+<app-footer></app-footer>

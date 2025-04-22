@@ -1,0 +1,10 @@
+<div class="form-container">
+    <h2>Modificar Dueno</h2>
+    <app-formulario-dueno
+        *ngIf="dueno"
+        [dueno]="dueno"
+        modo="actualizar"
+        (submitForm)="onSubmit($event)"
+        (cancelar)="onCancelar()">
+    </app-formulario-dueno>
+</div>

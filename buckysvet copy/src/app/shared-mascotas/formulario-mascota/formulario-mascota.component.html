@@ -1,0 +1,49 @@
+<div class="form-container">
+    <h2>{{ titulo }}</h2>
+    <form [formGroup]="mascotaForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input formControlName="nombre" type="text" id="nombre" placeholder="Ingrese el nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="especie">Especie</label>
+                <input formControlName="especie" type="text" id="especie" placeholder="Ingrese si es gato o perro" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input formControlName="edad" type="number" id="edad" placeholder="Ingrese la edad" required>
+            </div>
+            <div class="form-group">
+                <label for="peso">Peso</label>
+                <input formControlName="peso" type="number" step="0.1" id="peso" placeholder="Ingrese el peso" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="enfermedad">Enfermedad</label>
+                <input formControlName="enfermedad" type="text" id="enfermedad" placeholder="Ingrese la enfermedad">
+            </div>
+            <div class="form-group">
+                <label for="imagenUrl">URL de la Imagen</label>
+                <input formControlName="imagenUrl" type="url" id="imagenUrl" placeholder="Ingrese la URL de la imagen" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select formControlName="estado" id="estado" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">{{ botonSubmit }}</button>
+            <button type="button" class="btn-secondary" (click)="onCancelar()">Cancelar</button>
+        </div>
+    </form>
+</div>

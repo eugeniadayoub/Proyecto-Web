@@ -1,0 +1,32 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card text-center p-4 shadow-lg" style="max-width: 500px; width: 100%;">
+        <h1 class="titulo">Información de la Mascota</h1>
+
+        <!-- Mostrar mensaje de carga -->
+        <div *ngIf="loading">
+            <p>Cargando...</p>
+        </div>
+
+        <!-- Mostrar mensaje de error -->
+        <div *ngIf="error" class="alert alert-danger">
+            {{ error }}
+        </div>
+
+        <!-- Mostrar información de la mascota si está disponible -->
+        <div *ngIf="mascota">
+            <h2>{{ mascota.nombre }}</h2>
+            <img [src]="mascota.imagenUrl" alt="Imagen de la mascota" class="img-fluid rounded mb-3" style="max-width: 150px;">
+            <p><strong>Especie:</strong> {{ mascota.especie }}</p>
+            <p><strong>Edad:</strong> {{ mascota.edad }} años</p>
+            <p><strong>Peso:</strong> {{ mascota.peso }} kg</p>
+            <p><strong>Enfermedad:</strong> {{ mascota.enfermedad }}</p>
+            <p>
+                <strong>Estado:</strong>
+                <span *ngIf="mascota.estado === 'Activo'" class="badge bg-success" style="padding: 5px 10px; border-radius: 5px;">Activo</span>
+                <span *ngIf="mascota.estado === 'Inactivo'" class="badge bg-danger" style="padding: 5px 10px; border-radius: 5px;">Inactivo</span>
+            </p>
+        </div>
+
+        <a routerLink="/mascotas" class="btn btn-primary">Volver a la lista de mascotas</a>
+    </div>
+</div>

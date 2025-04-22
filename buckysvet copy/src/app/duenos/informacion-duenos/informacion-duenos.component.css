@@ -1,0 +1,85 @@
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 35px;
+    color: #23969F;
+    margin-top: 150px;
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 35px;
+    color: #23969F;
+}
+
+/* Tabla */
+.table {
+    width: 80%;
+    margin: 2rem auto;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #23969F;
+    color: white;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+    background-color: #dbdbdb;
+}
+
+.table tbody tr td a {
+    font-weight: bold;
+    color: #23969F;
+    text-decoration: none;
+}
+
+.table tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+.table tbody tr td img {
+    border: 3px solid #5EB896;
+    border-radius: 8px;
+    padding: 3px;
+    background-color: white;
+    width: 100px;
+    height: auto;
+}
+
+/* Botones */
+.actions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.btn-info, .btn-danger, .btn-primary {
+    background-color: #23969F;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    margin-left: 0;
+}
+
+.btn-info:hover, .btn-danger:hover, .btn-primary:hover {
+    background-color: #5EB896;
+}

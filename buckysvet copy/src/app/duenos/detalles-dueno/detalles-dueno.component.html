@@ -1,0 +1,19 @@
+<div class="dueno-card-container" *ngIf="dueno">
+  <h2 class="titulo">Información del Dueño</h2>
+
+  <h3 class="nombre-dueno">{{ dueno.nombre }}</h3>
+
+  <div class="imagen-contenedor">
+    <img [src]="dueno.imagenUrl || 'ruta/imagen-por-defecto.jpg'" 
+         alt="Foto del dueño {{ dueno.nombre }}" 
+         class="imagen-dueno" />
+  </div>
+
+  <p><strong>Cédula:</strong> {{ dueno.cedula || 'No disponible' }}</p>
+  <p><strong>Correo:</strong> {{ dueno.email || 'No disponible' }}</p>
+  <p><strong>Celular:</strong> {{ dueno.telefono || 'No disponible' }}</p>
+
+  <button class="btn-volver" (click)="volver()" aria-label="Volver a la lista de dueños">
+    Volver a la lista de dueños
+  </button>
+</div>

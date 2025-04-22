@@ -1,0 +1,127 @@
+<app-header></app-header>
+
+<main>
+
+    <!-- Sección de Información -->
+    <section class="info-banos">
+        <div class="texto-banos">
+            <h2>UN CONCEPTO INNOVADOR EN BAÑO Y PELUQUERÍA</h2>
+            <p>
+                En <strong>Bucky's Vet</strong> ofrecemos un servicio de <strong>baño y peluquería para perros</strong> con espacios dedicados y aislados, asegurando higiene y bienestar sin contaminación cruzada que existe en las áreas de baño dentro de las clínicas veterinarias.
+            </p>
+            <p class="resaltado">A partir del 1 de junio 2025, solo prestaremos servicio de baño y peluquería para perros.</p>
+            <p>Completa el siguiente formulario para solicitar una cita.</p>
+        </div>
+
+        <!-- Formulario -->
+        <div class="formulario-banos"  id="formulario-banos">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre*" required>
+                    <input type="text" name="apellidos" placeholder="Apellidos*" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email*" required>
+                    <input type="tel" name="telefono" placeholder="📞 321 1234567" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mascota" placeholder="Nombre de la Mascota*" required>
+                    <select name="clase-mascota">
+                        <option value="" disabled selected>Clase de Mascota</option>
+                        <option value="Perro">Perro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="fecha" required>
+                    <select name="tipo-bano" required>
+                        <option value="" disabled selected>Tipo de Baño</option>
+                        <option value="basico">Baño Básico</option>
+                        <option value="medicado">Baño Medicado</option>
+                        <option value="spa">Baño Spa</option>
+                        <option value="primer baño">Baño GRATIS primera vez</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="sede" required>
+                        <option value="" disabled selected>Selecciona una Sede</option>
+                        <option value="norte">Sede Norte</option>
+                        <option value="centro">Sede Centro</option>
+                        <option value="sur">Sede Sur</option>
+                    </select>
+                </div>
+                <div class="checkbox-politica">
+                    <input type="checkbox" required> 
+                    <label>He leído y acepto las políticas de privacidad <a href="#">Leer Políticas de privacidad</a></label>
+                </div>
+                <button type="submit" class="boton-agendar">PEDIR UNA CITA</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sección de Precios -->
+    <section class="banos-precios">
+        <div class="contenedor-banos">
+            <div class="carta">
+                <img src="assets/images/images-banos-buckysvet/pequeno.png" alt="Perro pequeño">
+                <h3 class="titulo-pequeno">PEQUEÑO</h3>
+                <h2 class="info-pequeno">MENOS DE 10KG</h2>
+                <p><strong>Pelo Corto:</strong> $57.000</p>
+                <p><strong>Pelo Largo:</strong> $63.000</p>
+                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+            </div>
+    
+            <div class="carta">
+                <img src="assets/images/images-banos-buckysvet/mediano.jpg" alt="Perro mediano">
+                <h3 class="titulo-mediano">MEDIANO</h3>
+                <h2 class="info-mediano">ENTRE 10 Y 20KG</h2>
+                <p><strong>Pelo Corto:</strong> $63.000</p>
+                <p><strong>Pelo Largo:</strong> $67.000</p>
+                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+            </div>
+    
+            <div class="carta">
+                <img src="assets/images/images-banos-buckysvet/grande.jpg" alt="Perro grande">
+                <h3 class="titulo-grande">GRANDE</h3>
+                <h2 class="info-grande">ENTRE 20 Y 40KG</h2>
+                <p><strong>Pelo Corto:</strong> $79.000</p>
+                <p><strong>Pelo Largo:</strong> $91.000</p>
+                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+            </div>
+    
+            <div class="carta">
+                <img src="assets/images/images-banos-buckysvet/gigante.jpg" alt="Perro gigante">
+                <h3 class="titulo-gigante">GIGANTE</h3>
+                <h2 class="info-gigante">MÁS DE 40KG</h2>
+                <p><strong>Pelo Corto:</strong> $97.000</p>
+                <p><strong>Pelo Largo:</strong> $108.000</p>
+                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Corte para tu Mascota -->
+    <section class="corte-mascota">
+        <div class="contenido-corte">
+            <!-- Imagen -->
+            <div class="imagen-corte">
+                <img src="assets/images/images-banos-buckysvet/corte-mascota.jpg" alt="Corte para tu mascota">
+            </div>
+
+            <!-- Texto y precios -->
+            <div class="info-corte">
+                <h2>CORTE PARA TU MASCOTA</h2>
+                <p><strong>Cepillado desde:</strong> $20.000</p>
+                <p><strong>Desenredado desde:</strong> $25.000</p>
+                <p><strong>Corte higiénico desde:</strong> $12.000</p>
+                <p><strong>Corte sin baño desde:</strong> $30.000</p>
+                <p><strong>Corte de uñas:</strong> $20.000</p>
+                <p><strong>Limpieza superficial de dientes:</strong> $10.000</p>
+
+                <!-- Botón -->
+                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

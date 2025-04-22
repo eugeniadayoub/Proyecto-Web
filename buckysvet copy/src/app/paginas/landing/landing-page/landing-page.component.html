@@ -1,0 +1,290 @@
+<app-header></app-header>
+
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="assets/images/images-landing-page/Presentacion1.jpg" alt="Veterinarios atendiendo a una mascota">
+
+            <!-- Contenedor del texto en el lado izquierdo -->
+            <div class="hero-text">
+                <h2>¿BUSCAS UN PLAN DE MEDICINA PARA TU MASCOTA?</h2>
+                <p>Mira nuestros planes de medicina y elige el que mejor se adapte a tus necesidades</p>
+                <a href="#" class="hero-button">HABLA CON NOSOTROS</a>
+            </div>
+
+            <!-- Logo en la parte superior derecha -->
+            <div class="hero-overlay">
+                <img src="assets/images/images-landing-page/Buckys_Vet_LOGO_y_NOMBRE_sin_fondo.png" alt="Bucky's Vet Logo y Nombre"
+                    class="hero-logo">
+            </div>
+
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section class="contacto">
+            <h2>EN BUCKY'S VET PUEDES RESERVAR UNA CONSULTA MÉDICA EN LÍNEA Y PRONTO ESTAREMOS CONFIRMANDO TU CITA</h2>
+            <p class="resaltado">LA PRIMERA CONSULTA MÉDICA ES GRATIS</p>
+
+            <!-- Formulario de contacto -->
+            <form class="contacto-form">
+                <div class="form-group">
+                    <input type="text" id="nombre" placeholder="Nombre*" aria-label="Nombre">
+                    <input type="text" id="apellido" placeholder="Apellido*" aria-label="Apellido">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="E-mail*" aria-label="Correo electrónico">
+                    <input type="tel" id="telefono" placeholder="Teléfono*" aria-label="Teléfono">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="mascota" placeholder="Nombre de la Mascota*" aria-label="Nombre de la Mascota">
+                    <select id="clase-mascota">
+                        <option value="">Clase de Mascota*</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="fecha" aria-label="Fecha de la Cita">
+                    <select id="motivo">
+                        <option value="">Motivo de la cita*</option>
+                        <option value="consulta">Consulta General</option>
+                        <option value="vacunacion">Vacunación</option>
+                        <option value="desparasitacion">Desparasitación</option>
+                    </select>
+                    <select id="sede">
+                    <option value="">Selecciona una Sede</option>
+                    <option value="norte">Sede Norte</option>
+                    <option value="centro">Sede Centro</option>
+                </select>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" id="terminos">
+                    <label for="terminos">He leído y acepto las políticas de privacidad</label>
+                </div>
+
+                <button type="submit" class="boton-cita">PEDIR UNA CITA</button>
+            </form>
+
+            <p class="nota">La primera consulta médica gratis es válida de lunes a viernes en horario diurno. El primer baño gratis solo aplica en la cede norte de lunes a viernes en horario diurno.</p>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section class="servicios">
+            <div class="servicios-contenedor">
+                <!-- Imagen del premio -->
+                <div class="servicios-premio">
+                    <img src="assets/images/images-landing-page/PremioMejorVet.png" alt="Premio Mejor Veterinaria">
+                </div>
+
+                <!-- Descripción y servicios -->
+                <div class="servicios-info">
+                    <h2>NUESTROS SERVICIOS</h2>
+                    <p>Somos un nuevo concepto en servicios médicos veterinarios enfocado en mejorar la calidad de vida de nuestras mascotas.
+                        Bucky's Vet ofrece los más altos estándares de calidad en medicina veterinaria disponibles en el país, un grupo de profesionales
+                        médicos veterinarios especializados, con instalaciones y equipos de última generación.</p>
+
+                    <a href="#" class="boton-servicio">PROGRAMAR UNA CONSULTA MÉDICA</a>
+                </div>
+
+                <!-- Lista de Servicios con Iconos -->
+                <div class="servicios-lista">
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/ConsultasMedicasIcon.png" alt="Consulta Médica">
+                        <span>CONSULTA MÉDICA</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/CirugiasIcon.png" alt="Cirugías">
+                        <span>CIRUGÍAS</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/VacunacionIcon.png" alt="Vacunación">
+                        <span>VACUNACIÓN</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/RayosXIcon.png" alt="Rayos X">
+                        <span>RAYOS X</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/EcografiaIcon.png" alt="Ecografía">
+                        <span>ECOGRAFÍA</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/LabClinicoIcon.png" alt="Laboratorio Clínico">
+                        <span>LABORATORIO CLÍNICO</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/HospitalizacionIcon.png" alt="Hospitalización">
+                        <span>HOSPITALIZACIÓN</span>
+                    </div>
+                    <div class="servicio">
+                        <img src="assets/images/images-landing-page/PlanesMedicosIcon.png" alt="Planes de Medicina">
+                        <span>PLANES DE MEDICINA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Planes de Medicina Preventiva -->
+        <section class="planes-medicina">
+            <div class="planes-contenedor">
+                <!-- Texto informativo -->
+                <div class="planes-texto">
+                    <h2>PLANES DE MEDICINA <br> PREVENTIVA</h2>
+                    <p>PREVENCIÓNPLUS BUSCA MEJORAR LA ESPERANZA DE VIDA DE NUESTRAS MASCOTAS CON LA PREVENCIÓN. 
+                        CONOCE LOS PLANES QUE TENEMOS DE ACUERDO A LA EDAD DE TU MASCOTA.</p>
+                    <a href="#" class="boton-planes">PLANES DE MEDICINA</a>
+                </div>
+
+                <!-- Imagen -->
+                <div class="planes-imagen">
+                    <img src="assets/images/images-landing-page/DuenosFelicesConMascota.png" alt="Dueños felices con su mascota">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Ubicación -->
+        <section class="ubicacion">
+            <div class="ubicacion-contenedor">
+                <!-- Imagen del Mapa -->
+                <div class="ubicacion-mapa">
+                    <img src="assets/images/images-landing-page/MapaBogota.png" alt="Mapa de Bogotá">
+                    <h2 class="ubicacion-titulo">BOGOTÁ</h2>
+                </div>
+
+                <!-- Texto informativo -->
+                <div class="ubicacion-texto">
+                    <h2>BUCKY'S VET ES LA RED DE CLÍNICAS Y HOSPITALES MÁS GRANDE DE BOGOTÁ</h2>
+                    <p>En Bucky's Vet, nos dedicamos a brindar atención integral y personalizada a tus mascotas. 
+                        Contamos con un equipo médico de veterinarios altamente capacitados y apasionados por los animales, 
+                        comprometidos con su bienestar y salud.</p>
+                    <p>Contamos con múltiples clínicas y hospitales en Bogotá para brindar atención oportuna a tu mascota.</p>
+
+                    <a href="#" class="boton-sedes">CONOCER TODAS LAS SEDES</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Beneficios -->
+        <section class="beneficios">
+            <div class="beneficios-contenedor">
+                <div class="beneficio">
+                    <!-- Imagen de consulta médica -->
+                    <div class="beneficio-imagen">
+                        <img src="assets/images/images-landing-page/PerroyGatoPosando.png" alt="Consulta Médica Gratis">
+                    </div>
+                    <h2>PRIMERA CONSULTA MÉDICA GRATIS</h2>
+                    <p>En nuestras clínicas la primera consulta médica siempre es gratis.</p>
+                    <a href="#" class="boton-beneficio">PROGRAMAR UNA CONSULTA MÉDICA GRATIS</a>
+                </div>
+
+                <div class="beneficio">
+                    <!-- Imagen del baño gratis -->
+                    <div class="beneficio-imagen">
+                        <img src="assets/images/images-landing-page/Banogratis.png" alt="Baño Gratis">
+                    </div>
+                    <h2>PRIMER BAÑO GRATIS</h2>
+                    <p>En la sede norte de Bucky's Vet, el primer baño siempre es gratis.</p>
+                    <a href="#" class="boton-beneficio">PROGRAMAR UN BAÑO GRATIS</a>
+                </div>
+            </div>
+
+            <!-- Nota sobre la consulta y el baño gratis -->
+            <p class="nota-beneficio">
+                La primera consulta médica gratis es válida de lunes a viernes en horario diurno. <br>
+                El primer baño gratis solo aplica en nuestra sede norte de lunes a viernes en horario diurno.
+            </p>
+        </section>
+
+        <!-- Sección de Hospitales 24 horas -->
+        <section class="hospitales">
+            <h2>HOSPITALES VETERINARIOS 24 HORAS - URGENCIAS</h2>
+            <div class="hospitales-icono">
+                <img src="assets/images/images-landing-page/Servicio24hrs.png" alt="24/7">
+            </div>
+
+            <!-- Imagen del local -->
+            <div class="hospitales-imagen">
+                <img src="assets/images/images-landing-page/FotoLocal.png" alt="Local de Bucky's Vet">
+            </div>
+
+            <!-- Contenedor de hospitales -->
+            <div class="hospitales-contenedor">
+                <div class="hospital">
+                    <div class="hospital-icono">
+                        <img src="assets/images/images-landing-page/Icono+1.png" alt="Ícono Hospital Norte">
+                    </div>
+                    <h3>HOSPITAL SEDE NORTE</h3>
+                    <h4>URGENCIAS 24 HORAS</h4>
+                    <h4>TELÉFONOS:</h4>
+                    <p>Tel: 601 7654321</p>
+                    <p>Cel: 310 2345678</p>
+                    <h4>DIRECCIÓN:</h4>
+                    <p>Calle 140 # 12-34, Usaquén, Bogotá</p>
+                </div>
+
+                <div class="hospital">
+                    <div class="hospital-icono">
+                        <img src="assets/images/images-landing-page/Icono+2.png" alt="Ícono Hospital Centro">
+                    </div>
+                    <h3>HOSPITAL SEDE CENTRO</h3>
+                    <h4>URGENCIAS 24 HORAS</h4>
+                    <h4>TELÉFONOS:</h4>
+                    <p>Tel: 601 8765432</p>
+                    <p>Cel: 320 8765432</p>
+                    <h4>DIRECCIÓN:</h4>
+                    <p>Carrera 7 # 25-50, Chapinero, Bogotá</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección del Blog -->
+        <section class="blog">
+            <p class="blog-subtitulo">PUBLICACIONES DE INTERÉS PARA TU MASCOTA</p>
+            <h2 class="blog-titulo">BLOG</h2>
+
+            <div class="blog-contenedor">
+                <!-- Tarjeta 1: Otitis en perros -->
+                <div class="blog-tarjeta">
+                    <div class="blog-imagen">
+                        <img src="assets/images/images-landing-page/BlogOtitis.jpg" alt="Otitis en perros">
+                        <div class="blog-hover"></div>
+                    </div>
+                    <h3>OTITIS EN PERROS</h3>
+                    <p>Otitis en perros, su mascota puede padecerlo.</p>
+                    <p class="blog-autor">BUCKY´S VET</p>
+                    <p class="blog-fecha">08 MARCH 2024</p>
+                </div>
+
+                <!-- Tarjeta 2: Desparasitación de mascotas -->
+                <div class="blog-tarjeta">
+                    <div class="blog-imagen">
+                        <img src="assets/images/images-landing-page/BlogDesparacitacionMascota.jpg" alt="Desparasitación de mascotas">
+                        <div class="blog-hover"></div>
+                    </div>
+                    <h3>Desparasitación de mascotas: todo lo que debes saber.</h3>
+                    <p>Desparasitación de tu mascota, muchas veces no le damos la importancia hasta no ver los síntomasassets.</p>
+                    <p class="blog-autor">BY BUCKY´S VET</p>
+                    <p class="blog-fecha">13 APRIL 2024</p>
+                </div>
+
+                <!-- Tarjeta 3: Vacunación de mascotas -->
+                <div class="blog-tarjeta">
+                    <div class="blog-imagen">
+                        <img src="assets/images/images-landing-page/BlogVacunacion.jpg" alt="Vacunación de mascotas">
+                        <div class="blog-hover"></div>
+                    </div>
+                    <h3>Vacunación de mascotas: Prevención de enfermedades mortales</h3>
+                    <p>Vacunación de mascotas: Protege a tu familia y a tu mascota de enfermedades mortales...</p>
+                    <p class="blog-autor">BY BUCKY´S VET</p>
+                    <p class="blog-fecha">02 SEPTEMBER 2024</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src = "assets/js/scriptLandingPage.js"></script>
+
+    <app-footer></app-footer>

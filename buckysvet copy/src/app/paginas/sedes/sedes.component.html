@@ -1,0 +1,118 @@
+<app-header></app-header>
+
+<main>
+    <!-- Sección de Sedes -->
+    <section class="seccion-sedes">
+        <div class="contenedor-sedes">
+            <img src="assets/images/images-sedes/sede-principal.png" alt="Sede Principal Bucky’s Vet">
+        </div>
+    </section>
+
+    <!-- Sección de Información sobre Sedes -->
+    <section class="sedes-info">
+        <div class="container">
+            <div class="texto-sedes">
+                <h2>BUCKY'S VET HACE PARTE DE LAS MEJORES SUCURSALES VETERINARIAS DE COLOMBIA</h2>
+                <p>Contamos con <strong>2 hospitales</strong> en Bogotá, garantizando la mejor atención para tu mascota.</p>
+                <p>Gracias a nuestra alianza con Puppi Export, ampliamos nuestra red de atención médica para estar más cerca de tu hogar y cuidar mejor a tu mascota.</p>
+            </div>
+            <div class="sedes-24h">
+                <P>LOS HOSPITALES SEDE NORTE Y SEDE CENTRO ESTAN DISPONIBLES 24/7</P>
+                <img src="assets/images/images-sedes/Servicio24hrs.png" alt="Servicio 24 horas">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Sedes -->
+    <section class="sedes">
+        <div class="containerSedes">
+            <h2>SEDES BUCKY'S VET EN BOGOTÁ</h2>
+            <div class="sede" onclick="toggleSede('sede-norte')">
+                <span class="numero">01</span> HOSPITAL SEDE NORTE
+                <span class="flecha">&#9662;</span>
+            </div>
+            <div class="info-sede" id="sede-norte">
+                <p><strong>DIRECCIÓN:</strong> Calle 140 # 12-34, Usaquén, Bogotá</p>
+                <p><strong>HORARIOS:</strong> 24 horas todos los días</p>
+                <p><strong>TELÉFONOS:</strong> Tel: 601 7654321 - Cel: 310 2345678</p>
+                <img src="assets/images/images-sedes/mapa_norte.png" alt="Mapa Sede Norte">
+            </div>
+            
+            <div class="sede" onclick="toggleSede('sede-centro')">
+                <span class="numero">02</span> HOSPITAL SEDE CENTRO
+                <span class="flecha">&#9662;</span>
+            </div>
+            <div class="info-sede" id="sede-centro">
+                <p><strong>DIRECCIÓN:</strong> Carrera 7 # 25-50, Chapinero, Bogotá</p>
+                <p><strong>HORARIOS:</strong> 24 horas todos los días</p>
+                <p><strong>TELÉFONOS:</strong> Tel: 601 8765432 - Cel: 320 8765432</p>
+                <img src="assets/images/images-sedes/mapa_centro.png" alt="Mapa Sede Centro">
+            </div>
+        </div>
+    </section>  
+
+    <!-- Sección de Imagende de Fondo Parallax -->
+    <section class="parallax-section">
+    </section>
+    
+    <!-- Sección de Reserva de Cita -->
+    <section class="reserva-cita">
+        <div class="container">
+            <div class="info-reserva">
+                <h2>HAZ TU RESERVA EN LÍNEA PARA CITAS MÉDICAS, BAÑO Y PELUQUERÍA, BAÑO O CONSULTAS GRATIS O LO QUE NECESITE TU MASCOTA Y PRONTO ESTAREMOS CONFIRMANDO TU CITA.</h2>
+                <p>Recuerda que si deseas pagar por nuestra página, también puedes hacerlo por medio de <strong>ePayco</strong> de manera rápida y segura.</p>
+            </div>
+            
+            <div class="formulario-reserva">
+                <p class="confirmacion-cita">RECUERDA QUE NUESTRO EQUIPO MÉDICO CONFIRMARÁ TU CITA PRONTO</p>
+                <form action="#" method="POST" class="formulario-cita">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre*" required>
+                        <input type="text" name="apellidos" placeholder="Apellidos*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email*" required>
+                        <input type="tel" name="telefono" placeholder="📞 321 1234567" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="mascota" placeholder="Nombre de la Mascota*" required>
+                        <select name="clase-mascota" required>
+                            <option value="" disabled selected>Clase de Mascota</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="fecha" required>
+                        <select name="motivo-cita" required>
+                            <option value="" disabled selected>Motivo de la Cita</option>
+                            <option value="esterilizacion">Esterilización</option>
+                            <option value="vacunacion">Vacunación</option>
+                            <option value="desparacitacion">Desparasitación</option>
+                            <option value="consulta-medica">Consulta Médica</option>
+                            <option value="profilaxis">Profilaxis</option>
+                            <option value="asesoria-nutricion">Asesoría de nutrición</option>
+                            <option value="consulta-geriatrica">Consulta Geriátrica</option>
+                            <option value="primera-consulta">Primera Consulta GRATIS</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="sede" required>
+                            <option value="" disabled selected>Selecciona una Sede</option>
+                            <option value="norte">Sede Norte</option>
+                            <option value="centro">Sede Centro</option>
+                        </select>
+                    </div>
+                    <div class="input-checkbox">
+                        <input type="checkbox" name="acepto-politica" required>
+                        <label>He leído y acepto las políticas de privacidad <a href="#">Leer Políticas de privacidad</a></label>
+                    </div>
+                    <button type="submit" class="boton-enviar">PEDIR UNA CITA</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

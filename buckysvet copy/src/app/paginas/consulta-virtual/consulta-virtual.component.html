@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<main>
+ <!-- Sección de Consulta Virtual -->
+    <section class="consulta-virtual">
+        <h1>NUEVA CONSULTA VIRTUAL BUCKY'S VET</h1>
+        <p>Ahora Bucky's Vet te ofrece atención virtual para pacientes que tengan un <strong>historial médico</strong> con nosotros. <br>
+        Reserva tu cita ahora y mantén la salud de tu mascota al día.</p>
+        
+        <div class="contenedor">
+            <!-- Imagen de consulta -->
+            <div class="imagen-consulta">
+                <img src="assets/images/images-consulta-virtual/consulta-virtual.png" alt="Consulta Virtual">
+            </div>
+
+            <!-- Formulario -->
+            <div class="formulario-consulta" id="formulario-virtual">
+                <h3>COMPLETA EL SIGUIENTE FORMULARIO</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre*" required>
+                        <input type="text" name="apellidos" placeholder="Apellidos*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="✉️ Email*" required>
+                        <input type="tel" name="telefono" placeholder="📞 321 1234567" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="fecha-cita" required>
+                        <select name="sede">
+                            <option value="" disabled selected>¿En cuál sede te han atendido?*</option>
+                            <option value="sede1">Sede Centro</option>
+                            <option value="sede2">Sede Norte</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="mascota" placeholder="Nombre de la Mascota*" required>
+                        <select name="clase-mascota">
+                            <option value="" disabled selected>Clase de Mascota</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </div>
+                    <div class="checkbox-politica">
+                        <input type="checkbox" required> 
+                        <label>He leído y acepto las políticas de privacidad <a href="#">Leer Políticas de privacidad</a></label>
+                    </div>
+                    <button type="submit" class="boton-enviar">PEDIR UNA CITA VIRTUAL</button>
+                </form>
+                <!-- Mensaje informativo -->
+                <p class="info">Ahora también puedes pagar por nuestra página.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Confirmación de Cita -->
+    <section class="seccion-confirmacion">
+        <div class="contenedor-confirmacion">
+            <span class="linea"></span>
+            <p>RECUERDA QUE TAN PRONTO ENVÍES LA SOLICITUD NUESTRO EQUIPO MÉDICO CONFIRMARÁ LA FECHA DE TU CITA PRONTO</p>
+        </div>
+    </section>
+
+</main>
+<app-footer></app-footer>

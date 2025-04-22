@@ -1,0 +1,104 @@
+<app-header></app-header>
+<main>
+
+    <!-- Sección de Contacto -->
+    <section class="contacto">
+        <h2 class="contacto-titulo">
+            EN BUCKY'S VET, NOS DEDICAMOS A BRINDAR LA MEJOR ATENCIÓN POSIBLE A NUESTROS PACIENTES.
+            SI TIENES ALGUNA PREGUNTA O INQUIETUD, NO DUDES EN PONERTE EN CONTACTO CON NOSOTROS.
+        </h2>
+
+        <div class="contacto-contenedor">
+            <!-- Servicio al Cliente -->
+            <div class="contacto-item">
+                <img src="assets/images/images-contacto/ServicioCliente.png" alt="Servicio al Cliente">
+                <h3>SERVICIO AL CLIENTE</h3>
+                <a href="mailto:servicio.cliente@buckysvet.com.co">servicio.cliente&#64;buckysvet.com.co</a>
+            </div>
+
+            <!-- Agendamientos -->
+            <div class="contacto-item">
+                <img src="assets/images/images-contacto/Calendario.png" alt="Agendamientos">
+                <h3>AGENDAMIENTOS</h3>
+                <a href="mailto:agendar@buckysvet.com.co">agendar&#64;buckysvet.com.co</a>
+            </div>
+
+            <!-- Pacientes Crónicos -->
+            <div class="contacto-item">
+                <img src="assets/images/images-contacto/PacientesCronicos.png" alt="Pacientes Crónicos">
+                <h3>PACIENTES CRÓNICOS</h3>
+                <a href="mailto:bienestar@buckysvet.com.co">bienestar&#64;buckysvet.com.co</a>
+            </div>
+
+            <!-- Planes de Medicina -->
+            <div class="contacto-item">
+                <img src="assets/images/images-contacto/PlanesMedicina.png" alt="Planes de Medicina">
+                <h3>PLANES DE MEDICINA</h3>
+                <a href="mailto:prevencionplus@buckysvet.com.co">prevencionplus&#64;buckysvet.com.co</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Formulario de Contacto -->
+    <section class="contacto-formulario">
+        <div class="contacto-contenedor">
+            <!-- Imagen del Call Center -->
+            <div class="contacto-imagen">
+                <img src="assets/images/images-contacto/callcenter.jpg" alt="Atención al Cliente">
+            </div>
+
+            <!-- Formulario -->
+            <div class="contacto-form">
+                <p class="contacto-subtitulo">LLENA EL SIGUIENTE FORMULARIO, NOS PONDREMOS EN CONTACTO CONTIGO.</p>
+                <h2 class="contacto-titulo">NUESTRO EQUIPO ATENDERÁ TODAS TUS SOLICITUDES</h2>
+
+                <form action="#" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre y apellidos*" required>
+                    <input type="email" name="email" placeholder="E-mail*" required>
+                    <input type="text" name="asunto" placeholder="Asunto">
+                    <textarea name="mensaje" placeholder="Mensaje" rows="4"></textarea>
+
+                    <button type="submit" class="boton-enviar">ENVIAR MENSAJE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Postulación -->
+    <section class="postulacion">
+        <div class="postulacion-contenedor">
+            <!-- Formulario -->
+            <div class="postulacion-form">
+                <h2>SI DESEAS HACER PARTE DE NUESTRO EQUIPO EN CUALQUIERA DE NUESTRAS ÁREAS DE TRABAJO, LLENA EL FORMULARIO Y ADJUNTA TU HOJA DE VIDA</h2>
+                <p class="subtexto">PUEDES ENVIARLO EN FORMATO PDF O WORD ÚNICAMENTE</p>
+
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <label for="nombre">Nombre y apellidos*</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" name="asunto">
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje"></textarea>
+
+                    <label for="archivo">Adjunta tu hoja de vida</label>
+                    <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx">
+
+                    <button type="submit" class="boton-postulacion">POSTULARME</button>
+                </form>
+            </div>
+
+            <!-- Imagen -->
+            <div class="postulacion-imagen">
+                <img src="assets/images/images-contacto/EquipoVeterinarios.jpg" alt="Equipo de Veterinarios">
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<app-footer></app-footer>

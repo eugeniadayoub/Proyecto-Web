@@ -1,0 +1,10 @@
+<div class="form-container">
+    <h2>Modificar Mascota</h2>
+    <app-formulario-mascota
+        *ngIf="mascota"
+        [mascota]="mascota"
+        modo="actualizar"
+        (submitForm)="onSubmit($event)"
+        (cancelar)="onCancelar()">
+    </app-formulario-mascota>
+</div>

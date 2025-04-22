@@ -1,0 +1,96 @@
+/* Sección de Agenda de Citas */
+.agenda-citas {
+    background-color: #EEEEEE;
+    padding: 50px 5%;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.agenda-citas .contenedor {
+    max-width: 1000px;
+    margin: 130px auto 0 auto;
+}
+
+.agenda-citas h2 {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 2rem;
+    color: #23969F;
+    margin-bottom: 15px;
+}
+
+.resaltado {
+    color: #5EB896;
+    font-weight: bold;
+}
+
+.agenda-citas p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Formulario de Citas */
+.formulario-cita {
+    background: #EEEEEE;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1500px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #5EB896;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Checkbox de Aceptación */
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-checkbox input {
+    margin-right: 10px;
+}
+
+.input-checkbox a {
+    color: #23969F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.input-checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de Enviar */
+.boton-enviar {
+    background-color: #23969F;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.boton-enviar:hover {
+    background-color: #5EB896;
+}
