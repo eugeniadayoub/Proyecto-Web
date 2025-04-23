@@ -73,11 +73,17 @@ export class TratamientoComponent implements OnInit {
   }
 
   registrarTratamiento(): void {
+    console.log('Tratamiento a registrar:', this.tratamiento);  // Verifica que los datos sean correctos
     this.tratamientoServicio.guardar(this.tratamiento).subscribe({
       next: (response) => {
         console.log('Tratamiento registrado:', response);
       },
-      error: (error) => console.error('Error al registrar tratamiento:', error)
+      error: (error) => {
+        console.error('Error al registrar tratamiento:', error);
+        console.error(error);  // Imprimir el error completo para más detalles
+      }
     });
   }
+  
+  
 }

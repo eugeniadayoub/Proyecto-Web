@@ -19,7 +19,7 @@ export class LoginComponent {
       .set('cedula', this.cedula.toString())
       .set('password', this.password);
 
-    this.http.post<any>('http://localhost:8090/login/login', null, { params, withCredentials: true })
+    this.http.post<any>('http://localhost:8090/login', null, { params, withCredentials: true })
       .subscribe({
         next: (res) => {
           if (res.status === 'success') {
