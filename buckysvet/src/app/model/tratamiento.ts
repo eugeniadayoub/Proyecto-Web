@@ -3,7 +3,7 @@ import { Mascota } from "./mascota";
 import { Medicamento } from "./medicamento";
 
 export interface Tratamiento {
-    idTratamiento: number;
+    id: null;
     fecha: string;
     descripcion: string;
     cantidad: number;

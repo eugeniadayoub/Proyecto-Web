@@ -32,6 +32,7 @@ import { SedesComponent } from './paginas/sedes/sedes.component';
 import { FormularioDuenoComponent } from './shared-duenos/formulario-dueno/formulario-dueno.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TratamientoComponent } from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
+import { DuenosmascotasComponent } from './duenos/duenosmascotas/duenosmascotas.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { TratamientoComponent } from './tratamientos/registrar-tratamiento/regis
     ProgramaCitaPresencialComponent,
     SedesComponent,
     FormularioDuenoComponent,
-    TratamientoComponent
+    TratamientoComponent,
+    DuenosmascotasComponent
   ],
   imports: [
     BrowserModule,

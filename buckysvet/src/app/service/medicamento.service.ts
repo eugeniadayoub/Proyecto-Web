@@ -29,7 +29,7 @@ export class MedicamentoService {
 
   // Actualizar un medicamento existente
   actualizar(medicamento: Medicamento): Observable<Medicamento> {
-    return this.http.put<Medicamento>(`${this.apiUrl}/${medicamento.idMedicamento}`, medicamento);
+    return this.http.put<Medicamento>(`${this.apiUrl}/${medicamento.id}`, medicamento);
   }
 
   // Eliminar un medicamento por su ID

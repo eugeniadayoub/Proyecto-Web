@@ -29,7 +29,7 @@ export class VeterinarioService {
 
   // Actualizar un veterinario existente
   actualizar(veterinario: Veterinario): Observable<Veterinario> {
-    return this.http.put<Veterinario>(`${this.apiUrl}/${veterinario.idVeterinario}`, veterinario);
+    return this.http.put<Veterinario>(`${this.apiUrl}/${veterinario.id}`, veterinario);
   }
 
   // Eliminar un veterinario por su ID

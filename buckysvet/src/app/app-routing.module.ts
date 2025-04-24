@@ -23,6 +23,8 @@ import { DetallesDuenoComponent } from './duenos/detalles-dueno/detalles-dueno.c
 import { InformacionDuenosComponent } from './duenos/informacion-duenos/informacion-duenos.component';
 import { ModificarDuenoComponent } from './duenos/modificar-duenos/modificar-duenos.component';
 import {TratamientoComponent} from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
+import { DuenosmascotasComponent} from './duenos/duenosmascotas/duenosmascotas.component';
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'asesoria-nutricion', component: AsesoriaNutricionComponent },
@@ -47,7 +49,7 @@ const routes: Routes = [
   { path: 'detalles-dueno/:id', component: DetallesDuenoComponent },
   { path: 'duenos', component: InformacionDuenosComponent },
   { path: 'tratamientos', component: TratamientoComponent},
-
+  { path: 'duenosmascotas/:id', component: DuenosmascotasComponent}
 ];
 
 @NgModule({

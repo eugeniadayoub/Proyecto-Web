@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="container">
+
+    <!-- Información del dueño -->
+    <div *ngIf="dueno" class="dueno-info">
+      <h2>Mascotas de <span>{{ dueno.nombre }}</span></h2>
+      <div class="datos-dueno">
+        <img [src]="dueno.imagenUrl" alt="Imagen del dueño" class="img-fluid rounded me-3" />
+        <p>Cédula: <span class="cedula">{{ dueno.cedula }}</span></p>
+        <p>Contacto: {{ dueno.telefono }}</p>
+        <p>Nombre: {{ dueno.nombre }}</p>
+      </div>
+    </div>
+  
+    <!-- Título cuando no hay dueño especificado -->
+    <h1 class="titulo mb-4" *ngIf="!dueno">Lista Mascotas</h1>
+  
+    <!-- Mensaje si no hay mascotas -->
+    <div *ngIf="mascotas.length === 0" class="alert alert-info">
+      No hay mascotas registradas.
+    </div>
+  
+    <!-- Tabla de mascotas -->
+    <table class="table table-striped table-hover" *ngIf="mascotas.length > 0">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Especie</th>
+          <th>Edad</th>
+          <th>Peso</th>
+          <th>Enfermedad</th>
+          <th>Imagen</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mascota of mascotas">
+          <td>
+            <a [routerLink]="['/info-mascota', mascota.mascotaId]">{{ mascota.nombre }}</a>
+          </td>
+          <td>{{ mascota.especie }}</td>
+          <td>{{ mascota.edad }}</td>
+          <td>{{ mascota.peso | number:'1.2-2' }}</td>
+          <td>{{ mascota.enfermedad }}</td>
+          <td>
+            <img [src]="mascota.imagenUrl" alt="Imagen de la mascota" width="100" />
+          </td>
+            <td>
+                <span *ngIf="mascota.estado === 'Activo'" class="badge bg-success" style="padding: 5px 10px; border-radius: 5px; background-color: #28a745; color: white;">Activo</span>
+                <span *ngIf="mascota.estado === 'Inactivo'" class="badge bg-danger" style="padding: 5px 10px; border-radius: 5px; background-color: #dc3545; color: white;">Inactivo</span>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="actions">
+        <button type="button" class="btn btn-secondary" (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+  </div>
+  
+  <app-footer></app-footer>

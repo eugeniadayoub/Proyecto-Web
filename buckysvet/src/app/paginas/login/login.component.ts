@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Dueno } from 'src/app/model/dueno';
 
 @Component({
   selector: 'app-login',
@@ -19,13 +20,14 @@ export class LoginComponent {
       .set('cedula', this.cedula.toString())
       .set('password', this.password);
 
-    this.http.post<any>('http://localhost:8090/login', null, { params, withCredentials: true })
+    this.http.post<Dueno>('http://localhost:8090/login', null, { params, withCredentials: true })
       .subscribe({
         next: (res) => {
-          if (res.status === 'success') {
-            this.router.navigate(['/mascotas', this.cedula]);
+          console.log("REspuesta:" , res);
+          if (res != null) {
+            this.router.navigate(['/duenosmascotas', res.id]);
           } else {
-            this.mensaje = res.message || 'Credenciales incorrectas';
+            //this.mensaje = res.message || 'Credenciales incorrectas';
           }
         },
         error: (err) => {

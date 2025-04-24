@@ -25,7 +25,7 @@ export class TratamientoService {
   }
 
   actualizar(tratamiento: Tratamiento): Observable<Tratamiento> {
-    return this.http.put<Tratamiento>(`${this.apiUrl}/${tratamiento.idTratamiento}`, tratamiento);
+    return this.http.put<Tratamiento>(`${this.apiUrl}/${tratamiento.id}`, tratamiento);
   }
 
   eliminar(id: number): Observable<void> {
