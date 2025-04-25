@@ -33,6 +33,8 @@ import { FormularioDuenoComponent } from './shared-duenos/formulario-dueno/formu
 import { HttpClientModule } from '@angular/common/http';
 import { TratamientoComponent } from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
 import { DuenosmascotasComponent } from './duenos/duenosmascotas/duenosmascotas.component';
+import { LoginVeterinarioComponent } from './paginas/login-veterinario/login-veterinario.component';
+import { VeterinarioDashboardComponent } from './paginas/veterinario-dashboard/veterinario-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { DuenosmascotasComponent } from './duenos/duenosmascotas/duenosmascotas.
     SedesComponent,
     FormularioDuenoComponent,
     TratamientoComponent,
-    DuenosmascotasComponent
+    DuenosmascotasComponent,
+    LoginVeterinarioComponent,
+    VeterinarioDashboardComponent
   ],
   imports: [
     BrowserModule,

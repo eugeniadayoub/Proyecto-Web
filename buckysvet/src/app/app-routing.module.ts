@@ -24,6 +24,8 @@ import { InformacionDuenosComponent } from './duenos/informacion-duenos/informac
 import { ModificarDuenoComponent } from './duenos/modificar-duenos/modificar-duenos.component';
 import {TratamientoComponent} from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
 import { DuenosmascotasComponent} from './duenos/duenosmascotas/duenosmascotas.component';
+import { LoginVeterinarioComponent } from './paginas/login-veterinario/login-veterinario.component';
+import { VeterinarioDashboardComponent } from './paginas/veterinario-dashboard/veterinario-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: 'hospital-sede-centro', component: HospitalSedeCentroComponent },
   { path: 'hospital-sede-norte', component: HospitalSedeNorteComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'login-veterinario', component: LoginVeterinarioComponent },
+  { path: 'veterinario-dashboard/:id', component: VeterinarioDashboardComponent },
   { path: 'plan-cuidado-preventivo', component: PlanCuidadoPreventivoComponent },
   { path: 'plan-medico-integral', component: PlanMedicoIntegralComponent },
   { path: 'plan-pacientes-cronicos', component: PlanPacientesCronicosComponent },

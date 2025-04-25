@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="dashboard-container">
+  <div *ngIf="loading" class="loading">
+    <p>Cargando información...</p>
+  </div>
+
+  <div *ngIf="error" class="error-container">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="!loading && !error && veterinario" class="veterinario-info">
+    <div class="profile-section">
+      <div class="profile-image">
+        <img [src]="veterinario.foto || 'assets/images/default-vet-profile.png'" alt="Foto del veterinario">
+      </div>
+      <div class="profile-details">
+        <h1>Bienvenido, Dr(a). {{ veterinario.nombre }}</h1>
+        <p><strong>Cédula:</strong> {{ veterinario.cedula }}</p>
+        <p><strong>Especialidad:</strong> {{ veterinario.especialidad }}</p>
+        <p><strong>Número de atenciones:</strong> {{ veterinario.numeroAtenciones }}</p>
+      </div>
+    </div>
+
+    <div class="dashboard-sections">
+      <div class="dashboard-card">
+        <h2>Pacientes asignados</h2>
+        <div *ngIf="veterinario.mascotas && veterinario.mascotas.length > 0" class="mascotas-list">
+          <div *ngFor="let mascota of veterinario.mascotas" class="mascota-item">
+            <img [src]="mascota.imagenUrl || 'assets/images/default-pet.png'" alt="Foto de la mascota">
+            <div class="mascota-info">
+              <h3>{{ mascota.nombre }}</h3>
+              <p>{{ mascota.especie }} - {{ mascota.edad }} años</p>
+              <p *ngIf="mascota.enfermedad"><strong>Condición:</strong> {{ mascota.enfermedad }}</p>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="!veterinario.mascotas || veterinario.mascotas.length === 0">No tienes pacientes asignados actualmente.</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>Tratamientos recientes</h2>
+        <div *ngIf="veterinario.tratamientos && veterinario.tratamientos.length > 0" class="tratamientos-list">
+          <div *ngFor="let tratamiento of veterinario.tratamientos" class="tratamiento-item">
+            <p><strong>Fecha:</strong> {{ tratamiento.fecha }}</p>
+            <p><strong>Mascota:</strong> {{ tratamiento.mascota.nombre }}</p>
+            <p><strong>Descripción:</strong> {{ tratamiento.descripcion }}</p>
+          </div>
+        </div>
+        <p *ngIf="!veterinario.tratamientos || veterinario.tratamientos.length === 0">No hay tratamientos recientes registrados.</p>
+      </div>
+    </div>
+  </div>
+</div> 
