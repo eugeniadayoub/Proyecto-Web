@@ -2,6 +2,7 @@
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
+  margin-top: 200px;
 }
 
 .loading, .error-container {
@@ -34,7 +35,7 @@
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #00796b;
+  border: 3px solid #23969F;
 }
 
 .profile-details {
@@ -43,7 +44,7 @@
 
 .profile-details h1 {
   margin: 0 0 15px 0;
-  color: #00796b;
+  color: #23969F;
   font-size: 28px;
 }
 
@@ -67,7 +68,7 @@
 }
 
 .dashboard-card h2 {
-  color: #00796b;
+  color: #23969F;
   margin-top: 0;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -132,3 +133,54 @@
     grid-template-columns: 1fr;
   }
 } 
+
+.botones{
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.boton-cerrar-sesion{
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.ver-mascotas, .ver-duenos, .registrar-tratamiento {
+    padding: 12px;
+    background: #23969F;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background 0.3s;
+
+}
+
+.ver-mascotas:hover, .ver-duenos:hover, .registrar-tratamiento:hover {
+    background: #5EB896;
+}
+
+.cerrar-sesion {
+  padding: 12px;
+  background: #23969F;
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 5px;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  width: 41%;
+}
+
+.cerrar-sesion:hover {
+  background: #5EB896;
+}

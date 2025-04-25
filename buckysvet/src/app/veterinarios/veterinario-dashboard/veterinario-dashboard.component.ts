@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { Veterinario } from 'src/app/model/veterinario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-veterinario-dashboard',
@@ -16,7 +17,8 @@ export class VeterinarioDashboardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private veterinarioService: VeterinarioService
+    private veterinarioService: VeterinarioService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,5 +45,21 @@ export class VeterinarioDashboardComponent implements OnInit {
           this.loading = false;
         }
       });
+  }
+
+  verMascotas(): void {
+    this.router.navigate(['/mascotas']);
+  }
+
+   verDuenos(): void {
+    this.router.navigate(['/duenos']);
+  }
+
+  registrarTratamiento(): void {
+    this.router.navigate(['/tratamientos']);
+  }
+
+  cerrarSesion(): void {
+    this.router.navigate(['/login']);
   }
 } 

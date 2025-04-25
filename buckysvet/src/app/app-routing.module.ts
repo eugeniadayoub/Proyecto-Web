@@ -23,9 +23,9 @@ import { DetallesDuenoComponent } from './duenos/detalles-dueno/detalles-dueno.c
 import { InformacionDuenosComponent } from './duenos/informacion-duenos/informacion-duenos.component';
 import { ModificarDuenoComponent } from './duenos/modificar-duenos/modificar-duenos.component';
 import {TratamientoComponent} from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
-import { DuenosmascotasComponent} from './duenos/duenosmascotas/duenosmascotas.component';
-import { LoginVeterinarioComponent } from './paginas/login-veterinario/login-veterinario.component';
-import { VeterinarioDashboardComponent } from './paginas/veterinario-dashboard/veterinario-dashboard.component';
+import { DuenosmascotasComponent} from './duenos/duenos-mascotas/duenosmascotas.component';
+import { LoginVeterinarioComponent } from './veterinarios/login-veterinario/login-veterinario.component';
+import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },

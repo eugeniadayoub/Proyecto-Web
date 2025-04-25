@@ -32,9 +32,9 @@ import { SedesComponent } from './paginas/sedes/sedes.component';
 import { FormularioDuenoComponent } from './shared-duenos/formulario-dueno/formulario-dueno.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TratamientoComponent } from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
-import { DuenosmascotasComponent } from './duenos/duenosmascotas/duenosmascotas.component';
-import { LoginVeterinarioComponent } from './paginas/login-veterinario/login-veterinario.component';
-import { VeterinarioDashboardComponent } from './paginas/veterinario-dashboard/veterinario-dashboard.component';
+import { DuenosmascotasComponent } from './duenos/duenos-mascotas/duenosmascotas.component';
+import { LoginVeterinarioComponent } from './veterinarios/login-veterinario/login-veterinario.component';
+import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
 
 @NgModule({
   declarations: [
