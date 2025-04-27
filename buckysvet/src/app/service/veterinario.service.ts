@@ -36,4 +36,12 @@ export class VeterinarioService {
   eliminar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  obtenerCantidadVeterinariosActivos(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/activos/total`);
+  }
+
+  obtenerCantidadVeterinariosInactivos(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/inactivos/total`);
+  }
 }

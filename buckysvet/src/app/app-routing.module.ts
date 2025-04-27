@@ -26,6 +26,7 @@ import {TratamientoComponent} from './tratamientos/registrar-tratamiento/registr
 import { DuenosmascotasComponent} from './duenos/duenos-mascotas/duenosmascotas.component';
 import { LoginVeterinarioComponent } from './veterinarios/login-veterinario/login-veterinario.component';
 import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
+import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -53,7 +54,8 @@ const routes: Routes = [
   { path: 'detalles-dueno/:id', component: DetallesDuenoComponent },
   { path: 'duenos', component: InformacionDuenosComponent },
   { path: 'tratamientos', component: TratamientoComponent},
-  { path: 'duenosmascotas/:id', component: DuenosmascotasComponent}
+  { path: 'duenosmascotas/:id', component: DuenosmascotasComponent}, 
+  { path: 'dashboard-admin', component: DashboardAdminComponent }
 ];
 
 @NgModule({

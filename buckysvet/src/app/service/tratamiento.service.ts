@@ -31,4 +31,12 @@ export class TratamientoService {
   eliminar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+  
+  obtenerCantidadTratamientosUltimoMes(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/ultimo-mes/total`);
+  }
+
+  obtenerTratamientosPorMedicamentoUltimoMes(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/ultimo-mes/por-medicamento`);
+  }
 }

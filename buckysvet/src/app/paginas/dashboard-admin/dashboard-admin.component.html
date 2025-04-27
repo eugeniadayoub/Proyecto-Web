@@ -1,0 +1,75 @@
+<div class="dashboard-container">
+  <h2>Dashboard Administrador</h2>
+
+  <div class="tarjetas-container">
+    <div class="kpi-card">
+      <h3>Tratamientos Último Mes</h3>
+      <p class="kpi-number">{{ cantidadTratamientosUltimoMes }}</p>
+    </div>
+
+    <div class="kpi-card">
+      <h3>Veterinarios Activos</h3>
+      <p class="kpi-number">{{ cantidadVeterinariosActivos }}</p>
+    </div>
+
+    <div class="kpi-card">
+      <h3>Veterinarios Inactivos</h3>
+      <p class="kpi-number">{{ cantidadVeterinariosInactivos }}</p>
+    </div>
+
+    <div class="kpi-card">
+      <h3>Mascotas Totales</h3>
+      <p class="kpi-number">{{ cantidadMascotasTotales }}</p>
+    </div>
+
+    <div class="kpi-card">
+      <h3>Mascotas Activas</h3>
+      <p class="kpi-number">{{ cantidadMascotasActivas }}</p>
+    </div>
+  </div>
+
+  <div class="graficas-container">
+    <div class="grafica-item">
+      <h3>Gráfica de Tratamientos por Medicamento (Último Mes)</h3>
+      <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType">
+      </canvas>
+    </div>
+
+    <div class="grafica-item">
+      <h3>Veterinarios (Activos/Inactivos)</h3>
+      <canvas baseChart
+        [data]="veterinariosPieData"
+        [type]="veterinariosPieType">
+      </canvas>
+    </div>
+
+    <div class="grafica-item">
+      <h3>Mascotas (Activas/Inactivas)</h3>
+      <canvas baseChart
+        [data]="mascotasPieData"
+        [type]="mascotasPieType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="tabla-container">
+    <h3>Tratamientos por Medicamento (Último Mes)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Medicamento</th>
+          <th>Cantidad Administrada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tratamientosPorMedicamento">
+          <td>{{ item[0] }}</td>
+          <td>{{ item[1] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

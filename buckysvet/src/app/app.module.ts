@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgChartsModule } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -35,6 +36,7 @@ import { TratamientoComponent } from './tratamientos/registrar-tratamiento/regis
 import { DuenosmascotasComponent } from './duenos/duenos-mascotas/duenosmascotas.component';
 import { LoginVeterinarioComponent } from './veterinarios/login-veterinario/login-veterinario.component';
 import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
+import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-admin.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashbo
     TratamientoComponent,
     DuenosmascotasComponent,
     LoginVeterinarioComponent,
-    VeterinarioDashboardComponent
+    VeterinarioDashboardComponent,
+    DashboardAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashbo
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

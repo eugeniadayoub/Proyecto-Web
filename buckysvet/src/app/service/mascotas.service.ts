@@ -39,4 +39,13 @@ export class MascotasService {
   obtenerMascotasPorDuenoId(duenoId: number): Observable<Mascota[]> {
     return this.http.get<Mascota[]>(`${this.apiUrl}/dueno/${duenoId}`);
   }
+
+  obtenerCantidadMascotasTotales(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/totales`);
+  }
+
+  obtenerCantidadMascotasActivas(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/activas/total`);
+  }
+  
 }
