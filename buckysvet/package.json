@@ -21,7 +21,8 @@
     "@angular/router": "^16.2.0",
     "buckysvet": "file:",
     "chart.js": "^3.9.1",
-    "ng2-charts": "^4.0.1",
+    "ng2-charts": "^4.1.1",
+    "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

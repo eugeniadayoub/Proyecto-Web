@@ -47,11 +47,16 @@ export class InformacionDuenosComponent implements OnInit {
     if (confirm("¿Estás seguro de que deseas eliminar a este dueño?")) {
       this.duenoService.eliminarDueno(id).subscribe({
         next: () => {
-          console.log('Dueño eliminado con éxito');
-          this.cargarDuenos();  // Recargar la lista de dueños después de eliminar el dueño
+          console.log('Dueño eliminado');
+          this.cargarDuenos()
         },
-        error: (err) => {
-          console.log('Error al eliminar el dueño', err);
+        error: (error) => {
+          console.error('Error al eliminar el dueño:', error);
+          alert('Error al eliminar el dueño. Verifique los logs del servidor.');
+        },
+        complete: () => {
+          // Opcionalmente, si quieres hacer algo cuando se complete la eliminación
+          console.log('Eliminación de dueño completada');
         }
       });
     }

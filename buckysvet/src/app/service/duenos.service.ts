@@ -67,7 +67,7 @@ export class DuenosService {
         'https://media.istockphoto.com/id/1411012107/es/foto/mujer-de-negocios-madura-sonriendo-mientras-est%C3%A1-de-pie-con-los-brazos-cruzados-en-el-trabajo.jpg?s=612x612&w=0&k=20&c=F0wMRxe1ZlkUfhSVgpfDU7Uldx7Tv8TY7XlJm2ZUYNY='
     ];
 
-  private apiUrl = 'http://localhost:8090/api/duenos';
+  private apiUrl = 'http://localhost:8090/duenos';
   constructor(private http: HttpClient) {
     this.generarDuenos();
   }

@@ -38,6 +38,7 @@ import { LoginVeterinarioComponent } from './veterinarios/login-veterinario/logi
 import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
 import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-admin.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +73,7 @@ import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-adm
     LoginVeterinarioComponent,
     VeterinarioDashboardComponent,
     DashboardAdminComponent
-  ],
+  ],  
   imports: [
     BrowserModule,
     AppRoutingModule,
