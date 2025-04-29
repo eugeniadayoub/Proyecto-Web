@@ -1,0 +1,42 @@
+<div class="form-container">
+    <h2>{{ titulo }}</h2>
+    <form [formGroup]="veterinarioForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input formControlName="nombre" type="text" id="nombre" placeholder="Ingrese el nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="especialidad">Especialidad</label>
+                <input formControlName="especialidad" type="text" id="especialidad" placeholder="Ingrese la especialidad" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="cedula">Cédula</label>
+                <input formControlName="cedula" type="number" id="cedula" placeholder="Ingrese la cédula" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input formControlName="contrasena" type="password" id="contrasena" placeholder="Ingrese la contraseña" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="foto">Foto URL</label>
+                <input formControlName="foto" type="url" id="foto" placeholder="Ingrese la URL de la foto" required>
+            </div>
+            <div class="form-group">
+                <label for="numeroAtenciones">Número de atenciones</label>
+                <input formControlName="numeroAtenciones" type="number" id="numeroAtenciones" placeholder="Ingrese el número de atenciones" required>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">{{ botonSubmit }}</button>
+            <button type="button" class="btn-secondary" (click)="onCancelar()">Cancelar</button>
+        </div>
+    </form>
+</div>

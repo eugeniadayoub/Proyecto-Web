@@ -27,8 +27,7 @@ export class TratamientoComponent implements OnInit {
 
   mascotas: Mascota[] = [];
   medicamentos: Medicamento[] = [];
-  veterinarios: Veterinario[] = [];
-
+  veterinarioLogueado: Veterinario | null = null;  // Aquí guardamos al veterinario logueado
 
   constructor(
     private tratamientoServicio: TratamientoService,
@@ -40,7 +39,7 @@ export class TratamientoComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerMascotas();
     this.obtenerMedicamentos();
-    this.obtenerVeterinarios();
+    this.obtenerVeterinarioLogueado();  // Obtener al veterinario logueado
   }
 
   obtenerMascotas(): void {
@@ -63,14 +62,28 @@ export class TratamientoComponent implements OnInit {
     });
   }
 
-  obtenerVeterinarios(): void {
-    this.veterinarioServicio.obtenerTodos().subscribe({
-      next: (veterinarios) => {
-        this.veterinarios = veterinarios;
-        console.log('Veterinarios obtenidos:', this.veterinarios);
-      },
-      error: (error) => console.error('Error al obtener veterinarios:', error)
-    });
+  obtenerVeterinarioLogueado(): void {
+    // Si tienes un servicio de autenticación, obtén el veterinario logueado
+    // Aquí asumo que puedes acceder a la información del veterinario directamente.
+    // Si no, necesitarías obtenerlo de un servicio de sesión.
+    // En este caso, lo asignamos manualmente, pero si usas un servicio de login, reemplázalo.
+
+    // Obtener el veterinario logueado de la sesión o de algún servicio
+    // Aquí lo asignamos manualmente (debes adaptar esto a tu lógica de autenticación):
+    const veterinario: Veterinario = {
+      id: 1, // Este sería el ID del veterinario logueado
+      nombre: 'Dr. Juan Pérez',  // Nombre del veterinario logueado
+      especialidad: 'Veterinario General',
+      numeroAtenciones: 10,
+      cedula: 1234567890,
+      contrasena: 'password123',
+      foto: 'ruta/a/foto.jpg',
+      mascotas: [],
+      tratamientos: []
+    };
+
+    this.veterinarioLogueado = veterinario;
+    this.tratamiento.veterinario = veterinario;  // Asignamos al tratamiento el veterinario logueado
   }
 
   registrarTratamiento(): void {
@@ -78,7 +91,7 @@ export class TratamientoComponent implements OnInit {
       alert("Selecciona una mascota válida");
       return;
     }
-  
+
     this.tratamiento.mascota = {
       mascotaId: this.tratamiento.mascota.mascotaId,
       nombre: this.tratamiento.mascota.nombre,
@@ -90,7 +103,7 @@ export class TratamientoComponent implements OnInit {
       estado: this.tratamiento.mascota.estado,
       dueno: this.tratamiento.mascota.dueno
     };
-  
+
     this.tratamiento.medicamento = {
       id: this.tratamiento.medicamento.id,
       nombre: this.tratamiento.medicamento.nombre,
@@ -99,27 +112,16 @@ export class TratamientoComponent implements OnInit {
       unidadesDisponibles: this.tratamiento.medicamento.unidadesDisponibles,
       unidadesVendidas: this.tratamiento.medicamento.unidadesVendidas
     };
-  
-    this.tratamiento.veterinario = {
-      id: this.tratamiento.veterinario.id,
-      nombre: this.tratamiento.veterinario.nombre,
-      especialidad: this.tratamiento.veterinario.especialidad,
-      numeroAtenciones: this.tratamiento.veterinario.numeroAtenciones,
-      cedula: this.tratamiento.veterinario.cedula,
-      contrasena: this.tratamiento.veterinario.contrasena,
-      foto: this.tratamiento.veterinario.foto,
-      mascotas: this.tratamiento.veterinario.mascotas,
-      tratamientos: this.tratamiento.veterinario.tratamientos
-    };
-  
+
     console.log('Tratamiento a registrar:', this.tratamiento);
-  
+
     this.tratamientoServicio.guardar(this.tratamiento).subscribe({
-    next: (response) => {
-      //console.log('Tratamiento registrado:', response);
-    },
-    error: (error) => {
-      console.error('Error al registrar tratamiento:', error);
-    }
-  });
-}}
+      next: (response) => {
+        console.log('Tratamiento registrado:', response);
+      },
+      error: (error) => {
+        console.error('Error al registrar tratamiento:', error);
+      }
+    });
+  }
+}

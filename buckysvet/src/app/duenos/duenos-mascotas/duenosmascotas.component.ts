@@ -42,7 +42,7 @@ export class DuenosmascotasComponent implements OnInit {
   }
 
   cerrarSesion() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login/dueno']);
   }
 }
 

@@ -78,6 +78,7 @@ h1 {
     display: inline-block;
     text-align: center;
     margin-left: 0;
+    margin-right: 5px;
 }
 
 .btn-info:hover, .btn-danger:hover, .btn-primary:hover {

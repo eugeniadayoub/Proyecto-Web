@@ -55,7 +55,6 @@ export class InformacionDuenosComponent implements OnInit {
           alert('Error al eliminar el dueño. Verifique los logs del servidor.');
         },
         complete: () => {
-          // Opcionalmente, si quieres hacer algo cuando se complete la eliminación
           console.log('Eliminación de dueño completada');
         }
       });
@@ -67,7 +66,7 @@ export class InformacionDuenosComponent implements OnInit {
       const nuevoDueno: Dueno = this.duenoForm.value;
       this.duenoService.guardarDueno(nuevoDueno).subscribe({
         next: () => {
-          this.cargarDuenos(); // Recargar la lista de dueños después de agregar uno
+          this.cargarDuenos(); 
           this.duenoForm.reset();
           alert('Dueño agregado exitosamente');
         },
@@ -81,7 +80,6 @@ export class InformacionDuenosComponent implements OnInit {
     }
   }
 
-  // Método para validar si el formulario tiene errores
   get f() {
     return this.duenoForm.controls;
   }

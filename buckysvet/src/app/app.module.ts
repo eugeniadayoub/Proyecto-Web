@@ -23,7 +23,7 @@ import { ErrorComponent } from './paginas/error/error.component';
 import { HospitalSedeCentroComponent } from './paginas/hospital-sede-centro/hospital-sede-centro.component';
 import { HospitalSedeNorteComponent } from './paginas/hospital-sede-norte/hospital-sede-norte.component';
 import { InformacionDuenosComponent } from './duenos/informacion-duenos/informacion-duenos.component';
-import { LoginComponent } from './paginas/login/login.component';
+//import { LoginComponent } from './paginas/login/login.component';
 import { ModificarDuenoComponent } from './duenos/modificar-duenos/modificar-duenos.component';
 import { PlanCuidadoPreventivoComponent } from './paginas/plan-cuidado-preventivo/plan-cuidado-preventivo.component';
 import { PlanMedicoIntegralComponent } from './paginas/plan-medico-integral/plan-medico-integral.component';
@@ -34,9 +34,14 @@ import { FormularioDuenoComponent } from './shared-duenos/formulario-dueno/formu
 import { HttpClientModule } from '@angular/common/http';
 import { TratamientoComponent } from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
 import { DuenosmascotasComponent } from './duenos/duenos-mascotas/duenosmascotas.component';
-import { LoginVeterinarioComponent } from './veterinarios/login-veterinario/login-veterinario.component';
-import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
 import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-admin.component';
+import { LoginComponent } from './logins/login/login.component';
+import { CrearVeterinarioComponent } from './veterinarios/crear-veterinario/crear-veterinario.component';
+import { FormularioVeterinarioComponent } from './shared-veterinarios/formulario-veterinario/formulario-veterinario.component';
+import { ModificarVeterinarioComponent } from './veterinarios/modificar-veterinario/modificar-veterinario.component';
+import { InformacionVeterinariosComponent } from './veterinarios/informacion-veterinarios/informacion-veterinarios.component';
+import { DetallesVeterinarioComponent } from './veterinarios/detalles-veterinario/detalles-veterinario.component';
+import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
 
 
 @NgModule({
@@ -60,7 +65,6 @@ import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-adm
     HospitalSedeCentroComponent,
     HospitalSedeNorteComponent,
     InformacionDuenosComponent,
-    LoginComponent,
     ModificarDuenoComponent,
     PlanCuidadoPreventivoComponent,
     PlanMedicoIntegralComponent,
@@ -70,9 +74,14 @@ import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-adm
     FormularioDuenoComponent,
     TratamientoComponent,
     DuenosmascotasComponent,
-    LoginVeterinarioComponent,
-    VeterinarioDashboardComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    LoginComponent,
+    CrearVeterinarioComponent,
+    FormularioVeterinarioComponent,
+    ModificarVeterinarioComponent,
+    InformacionVeterinariosComponent,
+    DetallesVeterinarioComponent,
+    VeterinarioDashboardComponent
   ],  
   imports: [
     BrowserModule,

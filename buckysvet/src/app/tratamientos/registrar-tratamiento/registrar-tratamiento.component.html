@@ -1,35 +1,27 @@
 <div class="tratamiento-container">
-    <h2>Registrar Tratamiento</h2>
-    <form (ngSubmit)="registrarTratamiento()">
-      <label for="fecha">Fecha:</label>
-      <input type="date" [(ngModel)]="tratamiento.fecha" name="fecha" required>
-  
-      <label for="descripcion">Descripción:</label>
-      <input type="text" [(ngModel)]="tratamiento.descripcion" name="descripcion" required>
-  
-      <label for="cantidad">Cantidad:</label>
-      <input type="number" [(ngModel)]="tratamiento.cantidad" name="cantidad" required>
-  
-      <label for="mascota">Mascota:</label>
-      <select [(ngModel)]="tratamiento.mascota" name="mascota" required>
-        <option [ngValue]="null">-- Selecciona una mascota --</option>
-        <option *ngFor="let mascota of mascotas" [ngValue]="mascota">{{ mascota.nombre }}</option>
-      </select>
+  <h2>Registrar Tratamiento</h2>
+  <form (ngSubmit)="registrarTratamiento()">
+    <label for="fecha">Fecha:</label>
+    <input type="date" [(ngModel)]="tratamiento.fecha" name="fecha" required>
 
-      <label for="medicamento">Medicamento:</label>
-      <select [(ngModel)]="tratamiento.medicamento" name="medicamento" required>
-        <option [ngValue]="null">-- Selecciona un medicamento --</option>
-        <option *ngFor="let medicamento of medicamentos" [ngValue]="medicamento">{{ medicamento.nombre }}</option>
-      </select>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" [(ngModel)]="tratamiento.descripcion" name="descripcion" required>
 
-      <label for="veterinario">Veterinario:</label>
-      <select [(ngModel)]="tratamiento.veterinario" name="veterinario" required>
-        <option [ngValue]="null">-- Selecciona un veterinario --</option>
-        <option *ngFor="let veterinario of veterinarios" [ngValue]="veterinario">{{ veterinario.nombre }}</option>
-      </select>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" [(ngModel)]="tratamiento.cantidad" name="cantidad" required>
 
-  
-      <button type="submit">Registrar Tratamiento</button>
-    </form>
-  </div>
-  
+    <label for="mascota">Mascota:</label>
+    <select [(ngModel)]="tratamiento.mascota" name="mascota" required>
+      <option [ngValue]="null">-- Selecciona una mascota --</option>
+      <option *ngFor="let mascota of mascotas" [ngValue]="mascota">{{ mascota.nombre }}</option>
+    </select>
+
+    <label for="medicamento">Medicamento:</label>
+    <select [(ngModel)]="tratamiento.medicamento" name="medicamento" required>
+      <option [ngValue]="null">-- Selecciona un medicamento --</option>
+      <option *ngFor="let medicamento of medicamentos" [ngValue]="medicamento">{{ medicamento.nombre }}</option>
+    </select>
+
+    <button type="submit">Registrar Tratamiento</button>
+  </form>
+</div>

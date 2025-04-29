@@ -20,7 +20,7 @@
       <th>Correo</th>
       <th>Celular</th>
       <th>Imagen</th>
-      <th colspan="2" class="text-center">Acciones</th> <!-- Para las acciones de editar y eliminar -->
+      <th colspan="2" class="text-center">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -36,9 +36,7 @@
       </td>
       <td></td>
       <td class="text-center">
-        <!-- Botón de edición -->
         <button class="btn btn-info" [routerLink]="['/modificar-dueno', dueno.id]">Editar</button>
-        <!-- Botón de eliminación -->
         <button class="btn btn-danger" (click)="eliminarDueno(dueno.id)">Eliminar</button>
       </td>
     </tr>

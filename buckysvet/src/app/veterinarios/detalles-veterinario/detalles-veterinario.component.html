@@ -1,0 +1,20 @@
+<div class="veterinario-card-container" *ngIf="veterinario">
+    <h2 class="titulo">Información del Veterinario</h2>
+  
+    <h3 class="nombre-veterinario">{{ veterinario.nombre }}</h3>
+  
+    <div class="imagen-contenedor">
+      <img [src]="veterinario.foto || 'ruta/imagen-por-defecto.jpg'" 
+           alt="Foto del veterinario {{ veterinario.nombre }}" 
+           class="imagen-veterinario" />
+    </div>
+  
+    <p><strong>Cédula:</strong> {{ veterinario.cedula || 'No disponible' }}</p>
+    <p><strong>Especialidad:</strong> {{ veterinario.especialidad || 'No disponible' }}</p>
+    <p><strong>Atenciones:</strong> {{ veterinario.numeroAtenciones || 'No disponible' }}</p>
+  
+    <button class="btn-volver" (click)="volver()" aria-label="Volver a la lista de veterinarios">
+      Volver a la lista de veterinarios
+    </button>
+  </div>
+  

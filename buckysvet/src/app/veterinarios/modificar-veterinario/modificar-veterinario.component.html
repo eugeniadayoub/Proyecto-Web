@@ -1,0 +1,11 @@
+<div class="form-container">
+    <h2>Modificar Veterinario</h2>
+    <app-formulario-veterinario
+      *ngIf="veterinario"
+      [veterinario]="veterinario"
+      modo="actualizar"
+      (submitForm)="onSubmit($event)"
+      (cancelar)="onCancelar()">
+    </app-formulario-veterinario>
+  </div>
+  

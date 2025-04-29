@@ -6,29 +6,21 @@ h1 {
     margin-top: 150px;
 }
 
-/* Título */
 .container h2 {
     text-align: center;
     font-size: 35px;
     color: #23969F;
 }
 
-.table.table-striped.table-hover{
-    width: 90%;         /* Ocupa el 80% del ancho de la ventana */
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Estilos de la tabla */
+/* Tabla */
 .table {
-    width: 80%;         /* Ocupa el 80% del ancho de la ventana */
-    margin: 2rem auto;  /* 2rem de margen vertical (arriba y abajo) y centrado horizontal */
+    width: 80%;
+    margin: 2rem auto;
     border: 1px solid #ddd;
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
-  }
+}
 
 .table thead {
     background-color: #23969F;
@@ -59,22 +51,23 @@ h1 {
     text-decoration: underline;
 }
 
-/* Estilo para imágenes en la tabla */
 .table tbody tr td img {
-    border: 3px solid #5EB896; /* Borde verde */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 3px; /* Espaciado entre la imagen y el borde */
-    background-color: white; /* Fondo para resaltar el borde */
-    width: 100px; /* Mantener el tamaño de la imagen */
+    border: 3px solid #5EB896;
+    border-radius: 8px;
+    padding: 3px;
+    background-color: white;
+    width: 100px;
     height: auto;
 }
+
 /* Botones */
 .actions {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.btn-info, .btn-danger, .btn-primary {
+
+.btn-info, .btn-danger, .btn-primary, .btn-secondary {
     background-color: #23969F;
     border: none;
     padding: 10px 20px;
@@ -84,11 +77,14 @@ h1 {
     color: white;
     display: inline-block;
     text-align: center;
-    margin-left: 0; 
+    margin-left: 0;
+    margin-right: 5px;
 }
 
-.btn-info:hover, .btn-danger:hover, .btn-primary:hover {
+.btn-primary {
+    margin-right: 5px;
+}
+
+.btn-info:hover, .btn-danger:hover, .btn-primary:hover, .btn-secondary:hover {
     background-color: #5EB896;
 }
-
- 

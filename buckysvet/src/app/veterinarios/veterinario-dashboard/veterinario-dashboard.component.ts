@@ -60,6 +60,6 @@ export class VeterinarioDashboardComponent implements OnInit {
   }
 
   cerrarSesion(): void {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login/veterinario']);
   }
 } 

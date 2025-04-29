@@ -8,7 +8,7 @@ import { Veterinario } from '../model/veterinario';
 })
 export class VeterinarioService {
 
-  private apiUrl = 'http://localhost:8090/api/veterinarios';  // URL de tu API REST
+  private apiUrl = 'http://localhost:8090/veterinarios';  // URL de tu API REST
 
   constructor(private http: HttpClient) { }
 
