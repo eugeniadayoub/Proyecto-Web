@@ -3,6 +3,7 @@ import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
 import { TratamientoService } from 'src/app/service/tratamiento.service';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { MascotasService } from 'src/app/service/mascotas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -62,7 +63,8 @@ export class DashboardAdminComponent implements OnInit {
   constructor(
     private tratamientoService: TratamientoService,
     private veterinarioService: VeterinarioService,
-    private mascotaService: MascotasService
+    private mascotaService: MascotasService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -133,5 +135,9 @@ export class DashboardAdminComponent implements OnInit {
   private updateMascotasPieChart() {
     this.mascotasPieData.datasets[0].data[0] = this.cantidadMascotasActivas; // Activas
     this.mascotasPieData.datasets[0].data[1] = this.cantidadMascotasTotales - this.cantidadMascotasActivas; // Inactivas
+  }
+
+  cerrarSesion() {
+    this.router.navigate(['/login/admin']);
   }
 }

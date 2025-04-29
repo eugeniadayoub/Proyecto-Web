@@ -106,3 +106,23 @@ th {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
+.btn-primary, .btn-secondary {
+  background-color: #23969F;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #5EB896;
+}
