@@ -9,6 +9,7 @@ export interface Veterinario {
     especialidad: string;
     foto: string;
     numeroAtenciones: number;
+    estado: String;
     mascotas: Mascota[];
     tratamientos: Tratamiento[];
 }

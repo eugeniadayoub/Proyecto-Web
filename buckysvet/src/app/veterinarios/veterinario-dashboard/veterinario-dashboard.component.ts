@@ -15,8 +15,8 @@ export class VeterinarioDashboardComponent implements OnInit {
   veterinario: Veterinario | null = null;
   loading: boolean = true;
   error: string = '';
-
-
+  mostrarAlertaInactivo = false;
+  
   constructor(
     private route: ActivatedRoute,
     private veterinarioService: VeterinarioService,
@@ -72,6 +72,14 @@ export class VeterinarioDashboardComponent implements OnInit {
   }
 
   registrarTratamiento(): void {
+    if (this.veterinario?.estado === 'Inactivo') {
+      this.mostrarAlertaInactivo = true;
+      alert('El veterinario esta inactivo');
+      return;
+    }
+
+    this.mostrarAlertaInactivo = false;
+
     this.router.navigate(['/tratamientos']);
   }
 

@@ -23,7 +23,8 @@ export class FormularioVeterinarioComponent implements OnInit {
       cedula: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],  // Solo números
       contrasena: ['', Validators.required],
       foto: ['', Validators.required],
-      numeroAtenciones: ['', [Validators.required, Validators.min(0)]]
+      numeroAtenciones: ['', [Validators.required, Validators.min(0)]],
+      estado: ['Activo', Validators.required]
     });
   }
 

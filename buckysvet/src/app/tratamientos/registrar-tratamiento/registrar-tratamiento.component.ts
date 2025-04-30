@@ -22,7 +22,7 @@ export class TratamientoComponent implements OnInit {
     descripcion: '',
     cantidad: 0,
     mascota: { mascotaId: 0, nombre: '', especie: '', edad: 0, peso: 0, enfermedad: '', imagenUrl: '', estado: '', dueno: { id: 0, cedula: 0, nombre: '', password: '', email: '', telefono: 0, imagenUrl: ''} },
-    veterinario: { id: 0, nombre: '', especialidad: '', numeroAtenciones: 0, cedula: 0, contrasena: '', foto: '', mascotas: [], tratamientos: [] },
+    veterinario: { id: 0, nombre: '', especialidad: '', numeroAtenciones: 0, cedula: 0, contrasena: '', foto: '', estado: '', mascotas: [], tratamientos: [] },
     medicamento: { id: 0, nombre: '', precioCompra: 0, precioVenta: 0, unidadesDisponibles: 0, unidadesVendidas: 0 }
   };
 
@@ -60,13 +60,14 @@ export class TratamientoComponent implements OnInit {
 
   obtenerVeterinarioLogueado(): void {
     const idGuardado = localStorage.getItem('veterinarioId');
-
+  
     if (idGuardado) {
       const id = parseInt(idGuardado, 10);
       this.veterinarioServicio.obtenerPorId(id).subscribe({
         next: (veterinario) => {
           this.veterinarioLogueado = veterinario;
           console.log('Veterinario logueado:', veterinario);
+          this.filtrarMascotasDelVeterinario();
         },
         error: (err) => console.error('Error obteniendo veterinario logueado:', err)
       });
@@ -74,7 +75,33 @@ export class TratamientoComponent implements OnInit {
       console.error('No se encontró el ID del veterinario logueado en localStorage');
     }
   }
-
+  
+  filtrarMascotasDelVeterinario(): void {
+    if (!this.veterinarioLogueado) return;
+  
+    this.mascotaServicio.obtenerTodas().subscribe({
+      next: (todasMascotas) => {
+        const idVet = this.veterinarioLogueado!.id;
+  
+        this.tratamientoServicio.obtenerTodos().subscribe({
+          next: (todosTratamientos) => {
+            // Obtener IDs de mascotas tratadas por este veterinario
+            const mascotasDelVet = todosTratamientos
+              .filter(t => t.veterinario.id === idVet && t.mascota.estado === 'Activo')
+              .map(t => t.mascota.mascotaId);
+  
+            // Filtrar mascotas activas que estén en esa lista
+            this.mascotas = todasMascotas.filter(m =>
+              mascotasDelVet.includes(m.mascotaId)
+            );
+          },
+          error: (error) => console.error('Error al obtener tratamientos:', error)
+        });
+      },
+      error: (error) => console.error('Error al obtener mascotas:', error)
+    });
+  }
+  
   registrarTratamiento(): void {
     if (!this.veterinarioLogueado || this.tratamiento.mascota.mascotaId <= 0 || this.tratamiento.medicamento.id <= 0) {
       alert("Selecciona una mascota, medicamento y espera a que se cargue el veterinario");
@@ -110,6 +137,7 @@ export class TratamientoComponent implements OnInit {
       cedula: 0,
       contrasena: '',
       foto: '',
+      estado: '',
       mascotas: [],
       tratamientos: []
     };

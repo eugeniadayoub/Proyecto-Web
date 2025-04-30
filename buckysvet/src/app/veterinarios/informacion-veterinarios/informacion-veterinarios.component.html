@@ -22,6 +22,7 @@
       <th>Especialidad</th>
       <th>Foto</th>
       <th>Atenciones</th>
+      <th>Estado</th>
       <th colspan="2" class="text-center">Acciones</th> <!-- Para las acciones de editar y eliminar -->
     </tr>
   </thead>
@@ -36,9 +37,12 @@
         <img [src]="veterinario.foto" alt="Foto del veterinario" style="max-width: 50px; max-height: 50px;" />
       </td>
       <td>{{ veterinario.numeroAtenciones }}</td>
+      <td>
+        <span *ngIf="veterinario.estado === 'Activo'" class="badge bg-success" style="padding: 5px 10px; border-radius: 5px; background-color: #28a745; color: white;">Activo</span>
+        <span *ngIf="veterinario.estado === 'Inactivo'" class="badge bg-danger" style="padding: 5px 10px; border-radius: 5px; background-color: #dc3545; color: white;">Inactivo</span>
+      </td>
       <td class="text-center">
         <button class="btn btn-info" [routerLink]="['/modificar-veterinario', veterinario.id]">Editar</button>
-        <button class="btn btn-danger" (click)="eliminarVeterinario(veterinario.id)">Eliminar</button>
       </td>
     </tr>
   </tbody>

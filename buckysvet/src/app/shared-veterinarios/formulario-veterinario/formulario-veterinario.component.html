@@ -32,6 +32,13 @@
                 <label for="numeroAtenciones">Número de atenciones</label>
                 <input formControlName="numeroAtenciones" type="number" id="numeroAtenciones" placeholder="Ingrese el número de atenciones" required>
             </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select formControlName="estado" id="estado" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
         </div>
 
         <div class="form-actions">
