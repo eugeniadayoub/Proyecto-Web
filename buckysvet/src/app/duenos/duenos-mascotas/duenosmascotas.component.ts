@@ -44,5 +44,17 @@ export class DuenosmascotasComponent implements OnInit {
   cerrarSesion() {
     this.router.navigate(['/login/dueno']);
   }
+
+  verDetallesMascota(mascota: Mascota): void {
+    if (this.dueno) {
+      this.router.navigate(['/detalle-mascota', mascota.mascotaId], {
+        queryParams: {
+          origen: 'dueno',
+          duenoId: this.dueno.id
+        }
+      });
+    }
+  }
+  
 }
 

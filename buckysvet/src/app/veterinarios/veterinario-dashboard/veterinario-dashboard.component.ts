@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { Veterinario } from 'src/app/model/veterinario';
 import { Router } from '@angular/router';
+import { Mascota} from 'src/app/model/mascota';
 
 @Component({
   selector: 'app-veterinario-dashboard',
@@ -14,6 +15,7 @@ export class VeterinarioDashboardComponent implements OnInit {
   veterinario: Veterinario | null = null;
   loading: boolean = true;
   error: string = '';
+
 
   constructor(
     private route: ActivatedRoute,
@@ -46,6 +48,20 @@ export class VeterinarioDashboardComponent implements OnInit {
         }
       });
   }
+
+  get mascotasTratadas(): Mascota[] {
+    if (!this.veterinario || !this.veterinario.tratamientos) return [];
+  
+    const mapa = new Map<number, Mascota>();
+    this.veterinario.tratamientos.forEach(tratamiento => {
+      const mascota = tratamiento.mascota;
+      if (mascota && !mapa.has(mascota.mascotaId)) {
+        mapa.set(mascota.mascotaId, mascota);
+      }
+    });
+    return Array.from(mapa.values());
+  }
+  
 
   verMascotas(): void {
     this.router.navigate(['/mascotas']);

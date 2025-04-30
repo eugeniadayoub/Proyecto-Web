@@ -36,7 +36,11 @@
       <tbody>
         <tr *ngFor="let mascota of mascotas">
           <td>
-            <a [routerLink]="['/info-mascota', mascota.mascotaId]">{{ mascota.nombre }}</a>
+            <a 
+              [routerLink]="['/detalles-mascota', mascota.mascotaId]"
+              [queryParams]="{ origen: 'dueno', duenoId: dueno?.id }">
+              {{ mascota.nombre }}
+            </a>
           </td>
           <td>{{ mascota.especie }}</td>
           <td>{{ mascota.edad }}</td>

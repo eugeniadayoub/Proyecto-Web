@@ -27,8 +27,8 @@
     <div class="dashboard-sections">
       <div class="dashboard-card">
         <h2>Pacientes asignados</h2>
-        <div *ngIf="veterinario.mascotas && veterinario.mascotas.length > 0" class="mascotas-list">
-          <div *ngFor="let mascota of veterinario.mascotas" class="mascota-item">
+        <div *ngIf="mascotasTratadas.length > 0" class="mascotas-list">
+          <div *ngFor="let mascota of mascotasTratadas" class="mascota-item">
             <img [src]="mascota.imagenUrl || 'assets/images/default-pet.png'" alt="Foto de la mascota">
             <div class="mascota-info">
               <h3>{{ mascota.nombre }}</h3>
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <p *ngIf="!veterinario.mascotas || veterinario.mascotas.length === 0">No tienes pacientes asignados actualmente.</p>
+        <p *ngIf="mascotasTratadas.length === 0">No tienes pacientes asignados actualmente.</p>        
       </div>
 
       <div class="dashboard-card">

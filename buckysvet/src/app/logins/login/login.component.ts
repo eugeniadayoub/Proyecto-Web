@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   isDueno(): boolean {
-    return this.tipoUsuario === 'dueno';  
+    return this.tipoUsuario === 'duenos';  
   }
 
   loginDueno(): void {
@@ -89,26 +89,32 @@ export class LoginComponent implements OnInit {
   
   loginVeterinario(): void {
     const params = new HttpParams()
-      .set('cedula', this.cedula.toString())   // Mandamos la cédula como parámetro
-      .set('password', this.password);          // Mandamos la contraseña como parámetro
-    
+      .set('cedula', this.cedula.toString())
+      .set('password', this.password);
+  
     this.http.post<any>('http://localhost:8090/login/veterinario', null, { params, withCredentials: true })
       .subscribe({
         next: (res) => {
-          console.log("Respuesta:", res);
+          console.log("Respuesta completa del login:", res);
+  
           if (res.status === 'success') {
-            // Verificar que la redirección contenga un ID
             const redirectUrl = res.redirectUrl;
+  
             if (redirectUrl && redirectUrl.includes('/veterinario-dashboard/')) {
-              // Extraer el ID del veterinario
-              const veterinarianId = redirectUrl.split('/veterinario-dashboard/')[1];
-              if (veterinarianId) {
-                this.router.navigate([`/veterinario-dashboard`, veterinarianId]);  // Redirigir al veterinario
+              const idPart = redirectUrl.split('/veterinario-dashboard/')[1];
+              const id = parseInt(idPart, 10);
+  
+              if (!isNaN(id)) {
+                // ✅ Aquí se guarda correctamente
+                localStorage.setItem('veterinarioId', id.toString());
+                console.log('Veterinario ID guardado en localStorage:', id);
+  
+                this.router.navigate(['/veterinario-dashboard', id]);
               } else {
-                this.mensaje = 'ID de veterinario no válido.';
+                console.error('No se pudo extraer el ID del veterinario de la URL.');
               }
             } else {
-              this.mensaje = 'URL de redirección no válida.';
+              console.error('URL de redirección inválida o sin ID de veterinario.');
             }
           } else {
             this.mensaje = res.message || 'Credenciales incorrectas';
@@ -119,7 +125,7 @@ export class LoginComponent implements OnInit {
           this.mensaje = 'Error al intentar iniciar sesión.';
         }
       });
-  }  
+  }     
 
   loginAdmin(): void {
     // Asegúrate de enviar los parámetros correctos en HttpParams
