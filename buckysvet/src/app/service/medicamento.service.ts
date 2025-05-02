@@ -36,4 +36,19 @@ export class MedicamentoService {
   eliminar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  // Obtener las ventas totales de medicamentos
+  obtenerVentasTotales(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/ventas-totales`);
+  }  
+
+  obtenerGananciasTotales(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/ganancias-totales`);
+  }
+
+  obtenerGananciasPorMedicamento(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/ganancias-por-medicamento`);
+  }
+  
+  
 }

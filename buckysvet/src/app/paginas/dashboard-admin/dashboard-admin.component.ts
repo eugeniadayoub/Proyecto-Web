@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
+import { ChartConfiguration } from 'chart.js';
 import { TratamientoService } from 'src/app/service/tratamiento.service';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 import { MascotasService } from 'src/app/service/mascotas.service';
+import { MedicamentoService } from 'src/app/service/medicamento.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,6 +20,11 @@ export class DashboardAdminComponent implements OnInit {
   cantidadVeterinariosInactivos: number = 0;
   cantidadMascotasTotales: number = 0;
   cantidadMascotasActivas: number = 0;
+  ventasTotales: number = 0;
+  gananciasTotales: number = 0;
+  top3Tratamientos: any[] = [];
+
+
 
   // Propiedades de la gráfica de barras
   public barChartOptions: ChartOptions = {
@@ -52,18 +59,64 @@ export class DashboardAdminComponent implements OnInit {
   // Propiedades para gráfica de mascotas
   public mascotasPieData = {
     labels: ['Activas', 'Inactivas'],
-    datasets: [{
-      data: [] as number[],
-      backgroundColor: ['#66bb6a', '#ef5350']
-    }]
+    datasets: [
+      {
+        data: [0, 0],
+        backgroundColor: ['#42A5F5', '#EF5350']
+      }
+    ]
   };
 
   public mascotasPieType: ChartType = 'pie';
+
+  public gananciasLabels: string[] = [];
+  public gananciasData: ChartConfiguration<'bar'>['data'] = {
+    labels: this.gananciasLabels,
+    datasets: [
+      { data: [], label: 'Ganancia por Medicamento', backgroundColor: '#66BB6A' }
+    ]
+  };
+  public gananciasOptions: ChartOptions = {
+    responsive: true,
+    indexAxis: 'y',
+    plugins: {
+      legend: { position: 'top' },
+      title: { display: true, text: 'Ganancia por Medicamento' }
+    }
+  };
+
+  public top3Labels: string[] = [];
+  public top3Data: number[] = [];
+
+  //Configuración de la gráfica de barras horizontales (Top 3 Tratamientos)
+  public top3ChartData: ChartConfiguration<'bar'>['data'] = {
+    labels: this.top3Labels,
+    datasets: [
+      {
+        data: this.top3Data,
+        label: 'Unidades Vendidas',
+        backgroundColor: ['#42A5F5', '#66BB6A', '#FFA726']
+      }
+    ]
+  };
+
+  public top3ChartOptions: ChartConfiguration<'bar'>['options'] = {
+    responsive: true,
+    indexAxis: 'y',
+    scales: {
+      x: {
+        beginAtZero: true
+      }
+    }
+  };
+
+  public top3ChartType: 'bar' = 'bar';
 
   constructor(
     private tratamientoService: TratamientoService,
     private veterinarioService: VeterinarioService,
     private mascotaService: MascotasService,
+    private medicamentoService: MedicamentoService,
     private router: Router
   ) { }
 
@@ -129,7 +182,52 @@ export class DashboardAdminComponent implements OnInit {
         console.error('Error al obtener cantidad de mascotas activas', error);
       }
     });
+    
+    this.medicamentoService.obtenerVentasTotales().subscribe({
+      next: (data) => {
+        console.log('Ventas totales recibidas:', data); // 👈 Agrega este log temporal
+        this.ventasTotales = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener ventas totales', error);
+      }
+    });
 
+    this.medicamentoService.obtenerGananciasTotales().subscribe({
+      next: (data) => {
+        this.gananciasTotales = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener las ganancias totales', error);
+      }
+    });
+
+    this.medicamentoService.obtenerGananciasPorMedicamento().subscribe({
+      next: (data) => {
+        this.gananciasLabels = data.map(item => item[0]);
+        this.gananciasData.labels = this.gananciasLabels;
+        this.gananciasData.datasets[0].data = data.map(item => item[1]);
+      },
+      error: (error) => {
+        console.error('Error al obtener ganancias por medicamento', error);
+      }
+    });
+    
+    this.tratamientoService.obtenerTop3TratamientosMasVendidos().subscribe({
+      next: (data) => {
+        this.top3Tratamientos = data;
+
+        // Actualizar gráfico
+      this.top3Labels = data.map(t => t.descripcion);
+      this.top3Data = data.map(t => t.cantidad);
+      this.top3ChartData.labels = this.top3Labels;
+      this.top3ChartData.datasets[0].data = this.top3Data;
+      },
+      error: (error) => {
+        console.error('Error al obtener top 3 tratamientos más vendidos', error);
+      }
+    });
+    
   }
 
   private updateMascotasPieChart() {

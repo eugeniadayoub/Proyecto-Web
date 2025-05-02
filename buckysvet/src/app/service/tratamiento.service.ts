@@ -39,4 +39,9 @@ export class TratamientoService {
   obtenerTratamientosPorMedicamentoUltimoMes(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/ultimo-mes/por-medicamento`);
   }
+
+  obtenerTop3TratamientosMasVendidos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/top3-vendidos`);
+  }
+  
 }
