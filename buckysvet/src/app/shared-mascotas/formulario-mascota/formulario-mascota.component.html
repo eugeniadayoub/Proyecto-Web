@@ -41,6 +41,18 @@
             </div>
         </div>
 
+        <div class="form-row">
+            <div class="form-group">
+                <label for="idDueno">Dueño</label>
+                <select formControlName="idDueno" id="idDueno" required>
+                    <option [ngValue]="null" disabled>Selecciona un dueño</option>
+                    <option *ngFor="let dueno of listaDuenos" [ngValue]="dueno.id">
+                        {{ dueno.nombre }} (Cédula: {{ dueno.cedula }})
+                    </option>
+                </select>
+            </div>
+        </div>
+
         <div class="form-actions">
             <button type="submit" class="btn-primary">{{ botonSubmit }}</button>
             <button type="button" class="btn-secondary" (click)="onCancelar()">Cancelar</button>

@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   isDueno(): boolean {
-    return this.tipoUsuario === 'duenos';  
+    return this.tipoUsuario === 'dueno';  
   }
 
   loginDueno(): void {

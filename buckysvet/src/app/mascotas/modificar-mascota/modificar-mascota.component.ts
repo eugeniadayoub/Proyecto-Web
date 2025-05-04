@@ -31,7 +31,10 @@ export class ModificarMascotaComponent implements OnInit {
   }
 
   onSubmit(mascotaActualizada: Mascota): void {
-    if (!this.mascota) return;
+    if (!this.mascota || this.mascota.mascotaId === undefined) {
+      alert('No se puede actualizar la mascota: ID no disponible');
+      return;
+    }
     this.mascotaService.actualizarMascota(this.mascota.mascotaId, mascotaActualizada).subscribe({
       next: () => {
         this.router.navigate(['/mascotas']);

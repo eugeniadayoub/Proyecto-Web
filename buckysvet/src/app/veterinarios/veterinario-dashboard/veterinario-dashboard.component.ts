@@ -35,9 +35,11 @@ export class VeterinarioDashboardComponent implements OnInit {
 
   cargarDatosVeterinario(): void {
     this.loading = true;
+    console.log('Cargando datos del veterinario con ID:', this.veterinarioId);
     this.veterinarioService.obtenerPorId(this.veterinarioId)
       .subscribe({
         next: (data) => {
+          console.log('Datos recibidos del veterinario:', data);
           this.veterinario = data;
           this.loading = false;
         },
@@ -49,17 +51,11 @@ export class VeterinarioDashboardComponent implements OnInit {
       });
   }
 
-  get mascotasTratadas(): Mascota[] {
-    if (!this.veterinario || !this.veterinario.tratamientos) return [];
-  
-    const mapa = new Map<number, Mascota>();
-    this.veterinario.tratamientos.forEach(tratamiento => {
-      const mascota = tratamiento.mascota;
-      if (mascota && !mapa.has(mascota.mascotaId)) {
-        mapa.set(mascota.mascotaId, mascota);
-      }
-    });
-    return Array.from(mapa.values());
+  get mascotasTratadas(): any[] {
+    if (!this.veterinario || !this.veterinario.mascotas) return [];
+    
+    console.log('Mascotas del veterinario:', this.veterinario.mascotas);
+    return this.veterinario.mascotas;
   }
   
 

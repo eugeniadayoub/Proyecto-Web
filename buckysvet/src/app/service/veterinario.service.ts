@@ -18,8 +18,8 @@ export class VeterinarioService {
   }
 
   // Obtener un veterinario por su ID
-  obtenerPorId(id: number): Observable<Veterinario> {
-    return this.http.get<Veterinario>(`${this.apiUrl}/${id}`);
+  obtenerPorId(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
   // Guardar un nuevo veterinario

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Mascota } from '../../model/mascota';
+import { DuenosService } from '../../service/duenos.service';
+import { Dueno } from '../../model/dueno';
 
 @Component({
   selector: 'app-formulario-mascota',
@@ -14,8 +16,9 @@ export class FormularioMascotaComponent implements OnInit {
   @Output() cancelar = new EventEmitter<void>();
 
   mascotaForm: FormGroup;
+  listaDuenos: Dueno[] = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private duenosService: DuenosService) {
     this.mascotaForm = this.fb.group({
       nombre: ['', Validators.required],
       especie: ['', Validators.required],
@@ -23,7 +26,8 @@ export class FormularioMascotaComponent implements OnInit {
       peso: [null, [Validators.required, Validators.min(0)]],
       enfermedad: [''],
       estado: ['Activo', Validators.required],
-      imagenUrl: ['', Validators.required]
+      imagenUrl: ['', Validators.required],
+      idDueno: [null]
     });
   }
 
@@ -32,6 +36,18 @@ export class FormularioMascotaComponent implements OnInit {
       // Si estamos en el modo de actualización, se llenan los valores.
       this.mascotaForm.patchValue(this.mascota);
     }
+    this.cargarDuenos();
+  }
+
+  cargarDuenos(): void {
+    this.duenosService.obtenerTodos().subscribe(
+      (data) => {
+        this.listaDuenos = data;
+      },
+      (error) => {
+        console.error('Error fetching owners:', error);
+      }
+    );
   }
 
   onSubmit(): void {

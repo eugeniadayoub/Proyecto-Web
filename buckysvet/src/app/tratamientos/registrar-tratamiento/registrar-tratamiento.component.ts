@@ -21,7 +21,7 @@ export class TratamientoComponent implements OnInit {
     fecha: '',
     descripcion: '',
     cantidad: 0,
-    mascota: { mascotaId: 0, nombre: '', especie: '', edad: 0, peso: 0, enfermedad: '', imagenUrl: '', estado: '', dueno: { id: 0, cedula: 0, nombre: '', password: '', email: '', telefono: 0, imagenUrl: ''} },
+    mascota: { mascotaId: 0, nombre: '', especie: '', edad: 0, peso: 0, enfermedad: '', imagenUrl: '', estado: '', idDueno: 0 },
     veterinario: { id: 0, nombre: '', especialidad: '', numeroAtenciones: 0, cedula: 0, contrasena: '', foto: '', estado: '', mascotas: [], tratamientos: [] },
     medicamento: { id: 0, nombre: '', precioCompra: 0, precioVenta: 0, unidadesDisponibles: 0, unidadesVendidas: 0 }
   };
@@ -103,7 +103,13 @@ export class TratamientoComponent implements OnInit {
   }
   
   registrarTratamiento(): void {
-    if (!this.veterinarioLogueado || this.tratamiento.mascota.mascotaId <= 0 || this.tratamiento.medicamento.id <= 0) {
+    if (!this.veterinarioLogueado || 
+        !this.tratamiento.mascota || 
+        !this.tratamiento.mascota.mascotaId || 
+        this.tratamiento.mascota.mascotaId <= 0 || 
+        !this.tratamiento.medicamento || 
+        !this.tratamiento.medicamento.id || 
+        this.tratamiento.medicamento.id <= 0) {
       alert("Selecciona una mascota, medicamento y espera a que se cargue el veterinario");
       return;
     }
@@ -117,7 +123,7 @@ export class TratamientoComponent implements OnInit {
       enfermedad: '',
       imagenUrl: '',
       estado: '',
-      dueno: { id: 0, cedula: 0, nombre: '', password: '', email: '', telefono: 0, imagenUrl: '' }
+      idDueno: 0
     };
 
     this.tratamiento.medicamento = {
