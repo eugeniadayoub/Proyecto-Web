@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MascotasService } from '../../service/mascotas.service';
 import { Mascota } from '../../model/mascota';
+import { VeterinarioService } from 'src/app/service/veterinario.service';  // Asegúrate de tener este servicio
+import { Veterinario } from 'src/app/model/veterinario';                   // Y este modelo
 
 @Component({
   selector: 'app-crear-mascota',
@@ -9,18 +11,24 @@ import { Mascota } from '../../model/mascota';
   styleUrls: ['./crear-mascota.component.css']
 })
 export class CrearMascotaComponent implements OnInit {
+  listaVeterinarios: Veterinario[] = [];
+
   constructor(
     private router: Router,
-    private mascotaService: MascotasService
+    private mascotaService: MascotasService,
+    private veterinarioService: VeterinarioService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.veterinarioService.obtenerTodos().subscribe({
+      next: (vets) => this.listaVeterinarios = vets,
+      error: (err) => console.error('Error al obtener veterinarios', err)
+    });
+  }
 
-  // Método para manejar el submit
   onSubmit(mascota: Mascota): void {
     this.mascotaService.agregarMascota(mascota).subscribe({
       next: () => {
-        // Redirigir a la lista de mascotas después de agregarla
         this.router.navigate(['/mascotas']);
       },
       error: (err) => {
@@ -28,8 +36,8 @@ export class CrearMascotaComponent implements OnInit {
       }
     });
   }
+  
 
-  // Método para cancelar la creación de la mascota y redirigir a la lista de mascotas
   onCancelar(): void {
     this.router.navigate(['/mascotas']);
   }

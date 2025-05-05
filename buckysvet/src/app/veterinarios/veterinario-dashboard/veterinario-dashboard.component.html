@@ -34,6 +34,7 @@
               <h3>{{ mascota.nombre }}</h3>
               <p>{{ mascota.especie }} - {{ mascota.edad }} años</p>
               <p *ngIf="mascota.enfermedad"><strong>Condición:</strong> {{ mascota.enfermedad }}</p>
+              <p><strong>Estado:</strong> {{ mascota.estado }}</p>
             </div>
           </div>
         </div>
@@ -45,7 +46,7 @@
         <div *ngIf="veterinario.tratamientos && veterinario.tratamientos.length > 0" class="tratamientos-list">
           <div *ngFor="let tratamiento of veterinario.tratamientos" class="tratamiento-item">
             <p><strong>Fecha:</strong> {{ tratamiento.fecha }}</p>
-            <p><strong>Mascota:</strong> {{ tratamiento.mascota?.nombre || 'No especificada' }}</p>
+            <p><strong>Mascota:</strong> {{ tratamiento.mascota.nombre || 'No especificada' }}</p>
             <p><strong>Descripción:</strong> {{ tratamiento.descripcion }}</p>
           </div>
         </div>

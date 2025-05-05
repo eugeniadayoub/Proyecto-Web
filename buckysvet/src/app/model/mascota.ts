@@ -1,5 +1,6 @@
 import { Dueno } from "./dueno";
 import { Tratamiento } from "./tratamiento";
+import { Veterinario } from "./veterinario";
 
 export interface Mascota {
     mascotaId?: number;
@@ -11,6 +12,9 @@ export interface Mascota {
     imagenUrl: string;
     estado: string;
     idDueno?: number;
+    idVeterinario?: number;
+    dueno?: Dueno;              
+    veterinario?: Veterinario;
 }
 
   

@@ -47,5 +47,10 @@ export class MascotasService {
   obtenerCantidadMascotasActivas(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/activas`);
   }  
+
+  obtenerMascotasActivasPorVeterinario(idVeterinario: number): Observable<Mascota[]> {
+    return this.http.get<Mascota[]>(`${this.apiUrl}/veterinario/${idVeterinario}/activas`);
+  }
+  
   
 }

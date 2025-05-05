@@ -35,7 +35,19 @@ export class ModificarMascotaComponent implements OnInit {
       alert('No se puede actualizar la mascota: ID no disponible');
       return;
     }
-    this.mascotaService.actualizarMascota(this.mascota.mascotaId, mascotaActualizada).subscribe({
+  
+    const mascotaFinal: any = {
+      ...mascotaActualizada,
+      dueno: { id: mascotaActualizada.idDueno },
+      veterinario: mascotaActualizada.idVeterinario
+        ? { id: mascotaActualizada.idVeterinario }
+        : null
+    };
+  
+    delete mascotaFinal.idDueno;
+    delete mascotaFinal.idVeterinario;
+  
+    this.mascotaService.actualizarMascota(this.mascota.mascotaId, mascotaFinal).subscribe({
       next: () => {
         this.router.navigate(['/mascotas']);
       },
@@ -43,7 +55,7 @@ export class ModificarMascotaComponent implements OnInit {
         alert('Error al actualizar la mascota');
       }
     });
-  }
+  }  
 
   onCancelar(): void {
     this.router.navigate(['/mascotas']);

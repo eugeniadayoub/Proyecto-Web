@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Mascota } from '../../model/mascota';
 import { DuenosService } from '../../service/duenos.service';
 import { Dueno } from '../../model/dueno';
+import { Veterinario } from '../../model/veterinario';
+import { VeterinarioService } from '../../service/veterinario.service';
 
 @Component({
   selector: 'app-formulario-mascota',
@@ -17,8 +19,9 @@ export class FormularioMascotaComponent implements OnInit {
 
   mascotaForm: FormGroup;
   listaDuenos: Dueno[] = [];
+  listaVeterinarios: Veterinario[] = [];
 
-  constructor(private fb: FormBuilder, private duenosService: DuenosService) {
+  constructor(private fb: FormBuilder, private duenosService: DuenosService, private veterinarioService: VeterinarioService) {
     this.mascotaForm = this.fb.group({
       nombre: ['', Validators.required],
       especie: ['', Validators.required],
@@ -27,38 +30,66 @@ export class FormularioMascotaComponent implements OnInit {
       enfermedad: [''],
       estado: ['Activo', Validators.required],
       imagenUrl: ['', Validators.required],
-      idDueno: [null]
+      idDueno: [null],
+      idVeterinario: [null]
     });
   }
 
   ngOnInit(): void {
     if (this.mascota) {
-      // Si estamos en el modo de actualización, se llenan los valores.
-      this.mascotaForm.patchValue(this.mascota);
-    }
+      const idDueno = this.mascota?.dueno?.id ?? null;
+      this.mascotaForm.patchValue({
+        ...this.mascota,
+        idDueno,
+        idVeterinario: this.mascota?.veterinario?.id ?? null
+      });
+
+      if (this.modo === 'actualizar') {
+        this.mascotaForm.get('idDueno')?.disable();
+      }      
+    
+      console.log('Dueño precargado:', this.mascota?.dueno?.id);
+      console.log('Veterinario precargado:', this.mascota?.veterinario?.id);
+    }    
+  
     this.cargarDuenos();
+    this.cargarVeterinarios();
   }
+   
 
   cargarDuenos(): void {
-    this.duenosService.obtenerTodos().subscribe(
-      (data) => {
+    this.duenosService.obtenerTodos().subscribe({
+      next: (data) => {
         this.listaDuenos = data;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching owners:', error);
       }
-    );
-  }
+    });
+  }  
+
+  cargarVeterinarios(): void {
+    this.veterinarioService.obtenerTodos().subscribe({
+      next: (data) => {
+        this.listaVeterinarios = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener veterinarios:', error);
+      }
+    });
+  }  
 
   onSubmit(): void {
     if (this.mascotaForm.valid) {
+      const formValue = this.mascotaForm.getRawValue(); // 👈 incluye deshabilitados
       const mascotaData: Mascota = {
-        mascotaId: this.mascota ? this.mascota.mascotaId : undefined,  // Se asigna undefined si estamos en el modo de "crear"
-        ...this.mascotaForm.value
+        mascotaId: this.mascota ? this.mascota.mascotaId : undefined,
+        ...formValue
       };
       this.submitForm.emit(mascotaData);
     }
   }
+  
 
   onCancelar(): void {
     this.cancelar.emit();

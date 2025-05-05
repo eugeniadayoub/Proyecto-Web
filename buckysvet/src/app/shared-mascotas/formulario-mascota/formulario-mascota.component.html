@@ -8,8 +8,12 @@
             </div>
             <div class="form-group">
                 <label for="especie">Especie</label>
-                <input formControlName="especie" type="text" id="especie" placeholder="Ingrese si es gato o perro" required>
-            </div>
+                <select formControlName="especie" id="especie" required>
+                  <option value="" disabled selected>Selecciona una especie</option>
+                  <option value="Perro">Perro</option>
+                  <option value="Gato">Gato</option>
+                </select>
+            </div>              
         </div>
 
         <div class="form-row">
@@ -52,6 +56,19 @@
                 </select>
             </div>
         </div>
+
+        <div class="form-row">
+            <div class="form-group">
+              <label for="idVeterinario">Veterinario</label>
+              <select formControlName="idVeterinario" id="idVeterinario">
+                <option [ngValue]="null" disabled selected>Selecciona un veterinario</option>
+                <option *ngFor="let vet of listaVeterinarios" [ngValue]="vet.id">
+                  {{ vet.nombre }} - {{ vet.especialidad }}
+                </option>
+              </select>
+            </div>
+          </div>          
+          
 
         <div class="form-actions">
             <button type="submit" class="btn-primary">{{ botonSubmit }}</button>

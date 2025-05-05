@@ -60,6 +60,8 @@ export class TratamientoComponent implements OnInit {
 
   obtenerVeterinarioLogueado(): void {
     const idGuardado = localStorage.getItem('veterinarioId');
+    console.log('ID recuperado del localStorage:', idGuardado);
+
   
     if (idGuardado) {
       const id = parseInt(idGuardado, 10);
@@ -76,31 +78,21 @@ export class TratamientoComponent implements OnInit {
     }
   }
   
+  
   filtrarMascotasDelVeterinario(): void {
     if (!this.veterinarioLogueado) return;
   
-    this.mascotaServicio.obtenerTodas().subscribe({
-      next: (todasMascotas) => {
-        const idVet = this.veterinarioLogueado!.id;
+    const idVet = this.veterinarioLogueado.id;
   
-        this.tratamientoServicio.obtenerTodos().subscribe({
-          next: (todosTratamientos) => {
-            // Obtener IDs de mascotas tratadas por este veterinario
-            const mascotasDelVet = todosTratamientos
-              .filter(t => t.veterinario.id === idVet && t.mascota.estado === 'Activo')
-              .map(t => t.mascota.mascotaId);
-  
-            // Filtrar mascotas activas que estén en esa lista
-            this.mascotas = todasMascotas.filter(m =>
-              mascotasDelVet.includes(m.mascotaId)
-            );
-          },
-          error: (error) => console.error('Error al obtener tratamientos:', error)
-        });
+    this.mascotaServicio.obtenerMascotasActivasPorVeterinario(idVet).subscribe({
+      next: (mascotas) => {
+        console.log('Respuesta del backend:', mascotas); // 🔍
+        this.mascotas = mascotas;
       },
-      error: (error) => console.error('Error al obtener mascotas:', error)
+      error: (err) => console.error('Error al filtrar mascotas del veterinario:', err)
     });
   }
+  
   
   registrarTratamiento(): void {
     if (!this.veterinarioLogueado || 
