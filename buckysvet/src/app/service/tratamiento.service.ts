@@ -41,7 +41,7 @@ export class TratamientoService {
   }
 
   obtenerTop3TratamientosMasVendidos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/top3-vendidos`);
+    return this.http.get<any[]>(`${this.apiUrl}/top3-tratamientos`);
   }
   
 }

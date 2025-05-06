@@ -1,3 +1,23 @@
+<header>
+  <nav class="navbar">
+      <div class="logo">
+          <a href="LandingPage.html">
+              <img src="assets/images/images-landing-page/Buckys_Vet_LOGO_sin_fondo.png" alt="Bucky's Vet Logo" class="logo-img">
+          </a>
+          <div class="logo-text">
+              Bucky's Vet
+              <span class="slogan">Peludos sanos y felices</span>
+          </div>
+      </div>
+      
+      <!-- Botones de acción -->
+      <div class="actions">
+          <button class="btn btn-primary" [routerLink]="['/veterinarios']">Veterinarios</button>
+          <button class="btn btn-secondary" (click)="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+  </nav>
+</header>
+
 <div class="dashboard-container">
   <h2>Dashboard Administrador</h2>
 
@@ -117,7 +137,6 @@
       </tbody>
     </table>
   </div>
-
-  <button class="btn btn-primary" [routerLink]= "['/veterinarios']" > Veterinarios </button>
-  <button class="btn btn-secondary" (click)="cerrarSesion()" > Cerrar Sesión </button>
 </div>
+
+<app-footer></app-footer>

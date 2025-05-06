@@ -1,6 +1,68 @@
+/* Navbar */
+.navbar {
+  background-color: #23969F;  
+  padding: 20px 40px 20px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 95%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 90px;
+  margin-right: 15px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.slogan {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+/* Botones */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary, .btn-secondary {
+  background-color: #5EB896;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #1b7150;
+}
+
 .dashboard-container {
   padding-left: 230px;
   padding-right: 230px;
+  padding-top: 120px; /* Espacio para el navbar */
 }
 
 .dashboard-container h2 {
@@ -105,24 +167,4 @@ th {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
-}
-
-.btn-primary, .btn-secondary {
-  background-color: #23969F;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-  display: inline-block;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 5px;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-primary:hover, .btn-secondary:hover {
-  background-color: #5EB896;
 }
