@@ -25,11 +25,23 @@ export class MascotasService {
   }
 
   agregarMascota(mascota: Mascota): Observable<Mascota> {
-    return this.http.post<Mascota>(this.apiUrl, mascota);
+    const mascotaData = {
+      ...mascota,
+      dueno: mascota.idDueno ? { idDueno: mascota.idDueno } : null,
+      veterinario: mascota.idVeterinario ? { id: mascota.idVeterinario } : null
+    };
+    
+    return this.http.post<Mascota>(this.apiUrl, mascotaData);
   }
 
   actualizarMascota(id: number, mascota: Mascota): Observable<Mascota> {
-    return this.http.put<Mascota>(`${this.apiUrl}/${id}`, mascota);
+    const mascotaData = {
+      ...mascota,
+      dueno: mascota.idDueno ? { idDueno: mascota.idDueno } : null,
+      veterinario: mascota.idVeterinario ? { id: mascota.idVeterinario } : null
+    };
+    
+    return this.http.put<Mascota>(`${this.apiUrl}/${id}`, mascotaData);
   }
 
   eliminar(id: number): Observable<void> {
