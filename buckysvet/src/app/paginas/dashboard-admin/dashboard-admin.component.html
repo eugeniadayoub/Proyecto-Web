@@ -56,19 +56,9 @@
       <h3>Ganancias Totales</h3>
       <p class="kpi-number">{{ gananciasTotales | currency:'COP':'symbol':'1.0-0' }}</p>
     </div>
-    
   </div>  
 
-  <div class="graficas-container">
-    <div class="grafica-item">
-      <h3>Gráfica de Tratamientos por Medicamento (Último Mes)</h3>
-      <canvas baseChart
-        [data]="barChartData"
-        [options]="barChartOptions"
-        [type]="barChartType">
-      </canvas>
-    </div>
-
+  <div class="graficasPie-container">
     <div class="grafica-item">
       <h3>Veterinarios (Activos/Inactivos)</h3>
       <canvas baseChart
@@ -82,6 +72,17 @@
       <canvas baseChart
         [data]="mascotasPieData"
         [type]="mascotasPieType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="graficasChar-container">
+    <div class="grafica-item">
+      <h3>Gráfica de Tratamientos por Medicamento (Último Mes)</h3>
+      <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType">
       </canvas>
     </div>
 

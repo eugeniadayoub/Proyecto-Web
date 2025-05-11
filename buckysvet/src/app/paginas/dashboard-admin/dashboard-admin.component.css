@@ -1,7 +1,7 @@
 /* Navbar */
 .navbar {
   background-color: #23969F;  
-  padding: 20px 40px 20px 40px;
+  padding: 20px 40px;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -56,13 +56,11 @@
 }
 
 .btn-primary:hover, .btn-secondary:hover {
-  background-color: #1b7150;
+  background-color: #4BAE59;
 }
 
 .dashboard-container {
-  padding-left: 230px;
-  padding-right: 230px;
-  padding-top: 120px; /* Espacio para el navbar */
+  padding: 130px 90px 30px 90px;
 }
 
 .dashboard-container h2 {
@@ -75,7 +73,7 @@
 .tarjetas-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
@@ -94,10 +92,18 @@
 }
 
 /* Bloque para todas las gráficas (nueva sección) */
-.graficas-container {
+.graficasPie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.graficasChar-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 23px;
   margin-bottom: 20px;
   justify-content: center;
   padding: 15px;
@@ -110,8 +116,6 @@
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex: 1 1 300px; /* Se adaptan al tamaño de pantalla */
-  max-width: 400px;
 }
 
 canvas {
@@ -120,35 +124,27 @@ canvas {
   margin-top: 20px;
 }
 
-/* Bloque anterior de la gráfica de barras sola  */
-.grafica-container {
+.tabla-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.tabla-container {
-  background-color: #ffffff;
-  padding: 00px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
-  margin-bottom: 40px;
+  justify-content: space-between;
 }
 
 .tabla-container h3 {
+  width: 100%;
   text-align: center;
-  font-size: 2rem; /* opcional, para que se vea mejor */
+  font-size: 2rem;
   color: #333333;
 }
 
-table {
+.tabla-container table {
+  flex: 1 1 45%;
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
