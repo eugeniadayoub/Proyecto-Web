@@ -58,85 +58,74 @@
     </div>
   </div>  
 
-  <div class="graficasPie-container">
-    <div class="grafica-item">
-      <h3>Veterinarios (Activos/Inactivos)</h3>
-      <canvas baseChart
-        [data]="veterinariosPieData"
-        [type]="veterinariosPieType">
-      </canvas>
+  <div class="graficas-container">
+    <div class="graficasPie-container">
+      <div class="grafica-item">
+        <h3>Veterinarios (Activos/Inactivos)</h3>
+        <canvas baseChart [data]="veterinariosPieData" [type]="veterinariosPieType"></canvas>
+      </div>
+  
+      <div class="grafica-item">
+        <h3>Mascotas (Activas/Inactivas)</h3>
+        <canvas baseChart [data]="mascotasPieData" [type]="mascotasPieType"></canvas>
+      </div>
     </div>
-
-    <div class="grafica-item">
-      <h3>Mascotas (Activas/Inactivas)</h3>
-      <canvas baseChart
-        [data]="mascotasPieData"
-        [type]="mascotasPieType">
-      </canvas>
-    </div>
-  </div>
-
-  <div class="graficasChar-container">
-    <div class="grafica-item">
-      <h3>Gráfica de Tratamientos por Medicamento (Último Mes)</h3>
-      <canvas baseChart
-        [data]="barChartData"
-        [options]="barChartOptions"
-        [type]="barChartType">
-      </canvas>
-    </div>
-
-    <div class="grafica-item">
-      <h3>Ganancias por Medicamento</h3>
-      <canvas baseChart
-        [data]="gananciasData"
-        [options]="gananciasOptions"
-        [type]="'bar'">
-      </canvas>
-    </div>
-
-    <div class="grafica-item">
-      <h3 style="text-align: center;">Gráfica - Top 3 Tratamientos Más Vendidos</h3>
-      <canvas baseChart
-        [data]="top3ChartData"
-        [options]="top3ChartOptions"
-        [type]="top3ChartType">
-      </canvas>
+  
+    <div class="graficasChar-container">
+      <div class="grafica-item">
+        <h3>Gráfica de Tratamientos por Medicamento (Último Mes)</h3>
+        <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType"></canvas>
+      </div>
+  
+      <div class="grafica-item">
+        <h3>Ganancias por Medicamento</h3>
+        <canvas baseChart [data]="gananciasData" [options]="gananciasOptions" [type]="'bar'"></canvas>
+      </div>
+  
+      <div class="grafica-item">
+        <h3 style="text-align: center;">Gráfica - Top 3 Tratamientos Más Vendidos</h3>
+        <canvas baseChart [data]="top3ChartData" [options]="top3ChartOptions" [type]="top3ChartType"></canvas>
+      </div>
     </div>
   </div>
+  
 
   <div class="tabla-container">
-    <h3>Tratamientos por Medicamento (Último Mes)</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Medicamento</th>
-          <th>Cantidad Administrada</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of tratamientosPorMedicamento">
-          <td>{{ item[0] }}</td>
-          <td>{{ item[1] }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="tabla-item">
+        <h3>Tratamientos por Medicamento (Último Mes)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Medicamento</th>
+              <th>Cantidad Administrada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of tratamientosPorMedicamento">
+              <td>{{ item[0] }}</td>
+              <td>{{ item[1] }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
 
-    <h3 style="text-align: center;">Top 3 Tratamientos Más Vendidos</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Descripción</th>
-          <th>Unidades Vendidas</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let tratamiento of top3Tratamientos">
-          <td>{{ tratamiento.descripcion }}</td>
-          <td>{{ tratamiento.cantidad }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="tabla-item">
+        <h3>Top 3 Tratamientos Más Vendidos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Unidades Vendidas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tratamiento of top3Tratamientos">
+              <td>{{ tratamiento.descripcion }}</td>
+              <td>{{ tratamiento.cantidad }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
   </div>
 </div>
 

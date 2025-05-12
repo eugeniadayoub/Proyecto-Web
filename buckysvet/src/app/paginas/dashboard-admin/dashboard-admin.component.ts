@@ -24,8 +24,6 @@ export class DashboardAdminComponent implements OnInit {
   gananciasTotales: number = 0;
   top3Tratamientos: any[] = [];
 
-
-
   // Propiedades de la gráfica de barras
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -185,7 +183,7 @@ export class DashboardAdminComponent implements OnInit {
     
     this.medicamentoService.obtenerVentasTotales().subscribe({
       next: (data) => {
-        console.log('Ventas totales recibidas:', data); // 👈 Agrega este log temporal
+        console.log('Ventas totales recibidas:', data); //Agrega este log temporal
         this.ventasTotales = data;
       },
       error: (error) => {
