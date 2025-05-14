@@ -11,7 +11,7 @@
     <input type="number" [(ngModel)]="tratamiento.cantidad" name="cantidad" required>
 
     <label for="mascota">Mascota:</label>
-    <select [(ngModel)]="tratamiento.mascota" name="mascota" required>
+    <select [(ngModel)]="tratamiento.mascota" name="mascota" id="seleccionar-mascota" required>
       <option [ngValue]="null">-- Selecciona una mascota --</option>
       <option *ngFor="let mascota of mascotas" [ngValue]="mascota">{{ mascota.nombre }}</option>
     </select>

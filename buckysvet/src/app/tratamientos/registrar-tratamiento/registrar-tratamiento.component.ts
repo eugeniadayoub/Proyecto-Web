@@ -106,6 +106,17 @@ export class TratamientoComponent implements OnInit {
       return;
     }
 
+    // Validar que haya unidades disponibles
+    if (this.tratamiento.cantidad <= 0) {
+      alert("La cantidad debe ser mayor a 0");
+      return;
+    }
+
+    if (this.tratamiento.cantidad > this.tratamiento.medicamento.unidadesDisponibles) {
+      alert("No hay suficientes unidades disponibles");
+      return;
+    }
+
     this.tratamiento.mascota = {
       mascotaId: this.tratamiento.mascota.mascotaId,
       nombre: '',
@@ -145,10 +156,15 @@ export class TratamientoComponent implements OnInit {
     this.tratamientoServicio.guardar(this.tratamiento).subscribe({
       next: (response) => {
         console.log('Tratamiento registrado exitosamente:', response);
+        // Actualizar la lista de medicamentos para reflejar los cambios
+        this.medicamentoServicio.obtenerTodos().subscribe(medicamentos => {
+          this.medicamentos = medicamentos;
+        });
         this.router.navigate([`/veterinario-dashboard/${response.veterinario.id}`]);
       },
       error: (error) => {
         console.error('Error al registrar tratamiento:', error);
+        alert('Error al registrar el tratamiento. Por favor, intente nuevamente.');
       }
     });
   }

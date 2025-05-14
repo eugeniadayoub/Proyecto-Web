@@ -139,7 +139,7 @@ export class LoginComponent implements OnInit {
         next: (res) => {
           console.log("Respuesta:", res);
           if (res.status === 'success') {
-            this.router.navigate(['/veterinarios']);  // Redirigir al dashboard de administrador
+            this.router.navigate(['/dashboard-admin']);  // Redirigir al dashboard de administrador
           } else {
             this.mensaje = res.message || 'Credenciales incorrectas';
           }
