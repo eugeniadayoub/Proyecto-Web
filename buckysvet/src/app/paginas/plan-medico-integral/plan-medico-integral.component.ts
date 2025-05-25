@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-plan-medico-integral',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./plan-medico-integral.component.css']
 })
 export class PlanMedicoIntegralComponent {
+  @ViewChild('infoIntegral') infoIntegral!: ElementRef;
 
+  scrollToInfo(): void {
+    this.infoIntegral.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }  
 }

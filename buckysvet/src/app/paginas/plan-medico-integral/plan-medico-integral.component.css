@@ -40,6 +40,7 @@
     align-items: flex-start;
     padding: 10px 20%;
     gap: 20px;
+    scroll-margin-top: 230px;
 }
 
 /* Contenedor de texto e información */

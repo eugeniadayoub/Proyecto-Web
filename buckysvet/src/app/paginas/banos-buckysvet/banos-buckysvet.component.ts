@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-banos-buckysvet',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./banos-buckysvet.component.css']
 })
 export class BanosBuckysvetComponent {
+  @ViewChild('infoBanos') infoBanos!: ElementRef;
 
+  scrollToInfo(): void {
+    this.infoBanos.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

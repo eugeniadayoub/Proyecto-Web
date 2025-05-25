@@ -78,15 +78,13 @@ display: block;
 
 /* Formulario */
 .plan-formulario {
-    flex: 1;
-    max-width: 60%;
+    max-width: 1000px; /* o el ancho que prefieras */
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-block-end: 25px;
-    margin-left: 260px;
+    margin: 0 auto 25px auto; /* esto centra horizontalmente */
 }
 
 .plan-formulario h3 {

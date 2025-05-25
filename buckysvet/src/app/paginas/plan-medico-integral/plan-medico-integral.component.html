@@ -13,7 +13,7 @@
             <h2>SEGURO MÉDICO PARA MASCOTAS, EPS O PREPAGADA PARA MASCOTAS. ¿CUÁL ES LA DIFERENCIA?</h2>
         </div>
 
-        <div class="plan-contenedor">
+        <div class="plan-contenedor" #infoIntegral>
             <div class="plan-texto">
                 <p>
                     Un seguro médico para mascotas se diferencia de nuestro PLAN DE SALUD MÉDICO porque este es un programa 
@@ -227,7 +227,9 @@
 
         <!-- Botón centrado debajo de las tarjetas -->
         <div class="boton-container">
-            <button class="boton-preventivo">CONOCER LOS PLANES PREVENTIVOS</button>
+            <a routerLink="/plan-cuidado-preventivo">
+                <button class="boton-preventivo">CONOCER LOS PLANES PREVENTIVOS</button>
+            </a>
         </div>
     </section>
 
@@ -304,7 +306,8 @@
             <p class="condiciones">* Aplican condiciones y restricciones</p>
 
             <!-- Botón de Más Información -->
-            <a href="#contacto" id="boton-contactar" class="boton-informacion">QUIERO MÁS INFORMACIÓN</a>
+            <button id="boton-contactar" class="boton-informacion" (click)="scrollToInfo()">QUIERO MÁS INFORMACIÓN</button>
+
         </div>
     </section>
 
@@ -344,7 +347,7 @@
 
         <!-- Botón de Más Información -->
         <div class="boton-contenedor">
-            <a href="#contacto" id="boton-contacto" class="boton-mas-informacion">QUIERO MÁS INFORMACIÓN</a>
+            <button id="boton-contactar" class="boton-informacion" (click)="scrollToInfo()">QUIERO MÁS INFORMACIÓN</button>
         </div>
     </section>
 </main>

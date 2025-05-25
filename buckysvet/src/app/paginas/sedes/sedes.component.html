@@ -4,7 +4,7 @@
     <!-- Sección de Sedes -->
     <section class="seccion-sedes">
         <div class="contenedor-sedes">
-            <img src="assets/images/images-sedes/sede-principal.png" alt="Sede Principal Bucky’s Vet">
+            <img src="assets/images/images-sedes/sede-principal.jpg" alt="Sede Principal Bucky’s Vet">
         </div>
     </section>
 
@@ -27,29 +27,31 @@
     <section class="sedes">
         <div class="containerSedes">
             <h2>SEDES BUCKY'S VET EN BOGOTÁ</h2>
-            <div class="sede" onclick="toggleSede('sede-norte')">
+
+            <div class="sede" (click)="toggleSede('norte')">
                 <span class="numero">01</span> HOSPITAL SEDE NORTE
-                <span class="flecha">&#9662;</span>
+                <span class="flecha">{{ sedeNorteVisible ? '▲' : '▼' }}</span>
             </div>
-            <div class="info-sede" id="sede-norte">
+            <div class="info-sede" [ngClass]="{ 'visible': sedeNorteVisible, 'oculta': !sedeNorteVisible }">
                 <p><strong>DIRECCIÓN:</strong> Calle 140 # 12-34, Usaquén, Bogotá</p>
                 <p><strong>HORARIOS:</strong> 24 horas todos los días</p>
                 <p><strong>TELÉFONOS:</strong> Tel: 601 7654321 - Cel: 310 2345678</p>
-                <img src="assets/images/images-sedes/mapa_norte.png" alt="Mapa Sede Norte">
+                <img src="assets/images/images-sedes/mapa_norte.png" alt="Mapa Sede Norte" />
             </div>
-            
-            <div class="sede" onclick="toggleSede('sede-centro')">
+
+            <div class="sede" (click)="toggleSede('centro')">
                 <span class="numero">02</span> HOSPITAL SEDE CENTRO
-                <span class="flecha">&#9662;</span>
+                <span class="flecha">{{ sedeCentroVisible ? '▲' : '▼' }}</span>
             </div>
-            <div class="info-sede" id="sede-centro">
+            <div class="info-sede" [ngClass]="{ 'visible': sedeCentroVisible, 'oculta': !sedeCentroVisible }">
                 <p><strong>DIRECCIÓN:</strong> Carrera 7 # 25-50, Chapinero, Bogotá</p>
                 <p><strong>HORARIOS:</strong> 24 horas todos los días</p>
                 <p><strong>TELÉFONOS:</strong> Tel: 601 8765432 - Cel: 320 8765432</p>
-                <img src="assets/images/images-sedes/mapa_centro.png" alt="Mapa Sede Centro">
+                <img src="assets/images/images-sedes/mapa_centro.png" alt="Mapa Sede Centro" />
             </div>
         </div>
-    </section>  
+    </section>
+
 
     <!-- Sección de Imagende de Fondo Parallax -->
     <section class="parallax-section">

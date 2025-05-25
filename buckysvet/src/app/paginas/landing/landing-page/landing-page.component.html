@@ -1,17 +1,15 @@
 <app-header></app-header>
-
-
     <!-- Contenido principal -->
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <img src="assets/images/images-landing-page/Presentacion1.jpg" alt="Veterinarios atendiendo a una mascota">
+            <img [src]="currentImage" alt="Veterinarios atendiendo a una mascota">
 
             <!-- Contenedor del texto en el lado izquierdo -->
             <div class="hero-text">
                 <h2>¿BUSCAS UN PLAN DE MEDICINA PARA TU MASCOTA?</h2>
                 <p>Mira nuestros planes de medicina y elige el que mejor se adapte a tus necesidades</p>
-                <a href="#" class="hero-button">HABLA CON NOSOTROS</a>
+                <a (click)="scrollToContacto()" class="hero-button">HABLA CON NOSOTROS</a>
             </div>
 
             <!-- Logo en la parte superior derecha -->
@@ -19,11 +17,10 @@
                 <img src="assets/images/images-landing-page/Buckys_Vet_LOGO_y_NOMBRE_sin_fondo.png" alt="Bucky's Vet Logo y Nombre"
                     class="hero-logo">
             </div>
-
-        </section>
+        </section>
 
         <!-- Sección de Contacto -->
-        <section class="contacto">
+        <section class="contacto" #contacto>
             <h2>EN BUCKY'S VET PUEDES RESERVAR UNA CONSULTA MÉDICA EN LÍNEA Y PRONTO ESTAREMOS CONFIRMANDO TU CITA</h2>
             <p class="resaltado">LA PRIMERA CONSULTA MÉDICA ES GRATIS</p>
 
@@ -86,7 +83,7 @@
                         Bucky's Vet ofrece los más altos estándares de calidad en medicina veterinaria disponibles en el país, un grupo de profesionales
                         médicos veterinarios especializados, con instalaciones y equipos de última generación.</p>
 
-                    <a href="#" class="boton-servicio">PROGRAMAR UNA CONSULTA MÉDICA</a>
+                    <a (click)="scrollToContacto()" class="boton-servicio">PROGRAMAR UNA CONSULTA MÉDICA</a>
                 </div>
 
                 <!-- Lista de Servicios con Iconos -->
@@ -135,7 +132,7 @@
                     <h2>PLANES DE MEDICINA <br> PREVENTIVA</h2>
                     <p>PREVENCIÓNPLUS BUSCA MEJORAR LA ESPERANZA DE VIDA DE NUESTRAS MASCOTAS CON LA PREVENCIÓN. 
                         CONOCE LOS PLANES QUE TENEMOS DE ACUERDO A LA EDAD DE TU MASCOTA.</p>
-                    <a href="#" class="boton-planes">PLANES DE MEDICINA</a>
+                    <a href="plan-cuidado-preventivo" class="boton-planes">PLANES DE MEDICINA</a>
                 </div>
 
                 <!-- Imagen -->
@@ -162,7 +159,7 @@
                         comprometidos con su bienestar y salud.</p>
                     <p>Contamos con múltiples clínicas y hospitales en Bogotá para brindar atención oportuna a tu mascota.</p>
 
-                    <a href="#" class="boton-sedes">CONOCER TODAS LAS SEDES</a>
+                    <a href="sedes" class="boton-sedes">CONOCER TODAS LAS SEDES</a>
                 </div>
             </div>
         </section>
@@ -177,7 +174,7 @@
                     </div>
                     <h2>PRIMERA CONSULTA MÉDICA GRATIS</h2>
                     <p>En nuestras clínicas la primera consulta médica siempre es gratis.</p>
-                    <a href="#" class="boton-beneficio">PROGRAMAR UNA CONSULTA MÉDICA GRATIS</a>
+                    <a href="programa-cita-presencial" class="boton-beneficio">PROGRAMAR UNA CONSULTA MÉDICA GRATIS</a>
                 </div>
 
                 <div class="beneficio">
@@ -187,7 +184,7 @@
                     </div>
                     <h2>PRIMER BAÑO GRATIS</h2>
                     <p>En la sede norte de Bucky's Vet, el primer baño siempre es gratis.</p>
-                    <a href="#" class="boton-beneficio">PROGRAMAR UN BAÑO GRATIS</a>
+                    <a href="banos-buckysvet" class="boton-beneficio">PROGRAMAR UN BAÑO GRATIS</a>
                 </div>
             </div>
 
@@ -214,7 +211,9 @@
             <div class="hospitales-contenedor">
                 <div class="hospital">
                     <div class="hospital-icono">
-                        <img src="assets/images/images-landing-page/Icono+1.png" alt="Ícono Hospital Norte">
+                        <a routerLink="hospital-sede-norte">
+                            <img src="assets/images/images-landing-page/Icono+1.png" alt="Ícono Hospital Norte">
+                        </a>
                     </div>
                     <h3>HOSPITAL SEDE NORTE</h3>
                     <h4>URGENCIAS 24 HORAS</h4>
@@ -227,7 +226,9 @@
 
                 <div class="hospital">
                     <div class="hospital-icono">
-                        <img src="assets/images/images-landing-page/Icono+2.png" alt="Ícono Hospital Centro">
+                        <a routerLink="hospital-sede-centro">
+                            <img src="assets/images/images-landing-page/Icono+2.png" alt="Ícono Hospital Centro">
+                        </a>
                     </div>
                     <h3>HOSPITAL SEDE CENTRO</h3>
                     <h4>URGENCIAS 24 HORAS</h4>
@@ -247,40 +248,47 @@
 
             <div class="blog-contenedor">
                 <!-- Tarjeta 1: Otitis en perros -->
-                <div class="blog-tarjeta">
-                    <div class="blog-imagen">
-                        <img src="assets/images/images-landing-page/BlogOtitis.jpg" alt="Otitis en perros">
-                        <div class="blog-hover"></div>
+                 <a href="otitis-en-perros" class="blog-tarjeta-link">
+                    <div class="blog-tarjeta">
+                        <div class="blog-imagen">
+                            <img src="assets/images/images-landing-page/BlogOtitis.jpg" alt="Otitis en perros">
+                            <div class="blog-hover"></div>
+                        </div>
+                        <h3>OTITIS EN PERROS</h3>
+                        <p>Otitis en perros, su mascota puede padecerlo.</p>
+                        <p class="blog-autor">BUCKY´S VET</p>
+                        <p class="blog-fecha">08 MARCH 2024</p>
                     </div>
-                    <h3>OTITIS EN PERROS</h3>
-                    <p>Otitis en perros, su mascota puede padecerlo.</p>
-                    <p class="blog-autor">BUCKY´S VET</p>
-                    <p class="blog-fecha">08 MARCH 2024</p>
-                </div>
-
+                 </a>
+            
                 <!-- Tarjeta 2: Desparasitación de mascotas -->
-                <div class="blog-tarjeta">
-                    <div class="blog-imagen">
-                        <img src="assets/images/images-landing-page/BlogDesparacitacionMascota.jpg" alt="Desparasitación de mascotas">
-                        <div class="blog-hover"></div>
+                 <a href="desparacitacion-de-mascotas" class="blog-tarjeta-link">
+                    <div class="blog-tarjeta">
+                        <div class="blog-imagen">
+                            <img src="assets/images/images-landing-page/BlogDesparacitacionMascota.jpg" alt="Desparasitación de mascotas">
+                            <div class="blog-hover"></div>
+                        </div>
+                        <h3>Desparasitación de mascotas: todo lo que debes saber.</h3>
+                        <p>Desparasitación de tu mascota, muchas veces no le damos la importancia hasta no ver los síntomasassets.</p>
+                        <p class="blog-autor">BY BUCKY´S VET</p>
+                        <p class="blog-fecha">13 APRIL 2024</p>
                     </div>
-                    <h3>Desparasitación de mascotas: todo lo que debes saber.</h3>
-                    <p>Desparasitación de tu mascota, muchas veces no le damos la importancia hasta no ver los síntomasassets.</p>
-                    <p class="blog-autor">BY BUCKY´S VET</p>
-                    <p class="blog-fecha">13 APRIL 2024</p>
-                </div>
-
+                 </a>
+            
                 <!-- Tarjeta 3: Vacunación de mascotas -->
-                <div class="blog-tarjeta">
-                    <div class="blog-imagen">
-                        <img src="assets/images/images-landing-page/BlogVacunacion.jpg" alt="Vacunación de mascotas">
-                        <div class="blog-hover"></div>
+                 <a href="vacunacion-mascotas" class="blog-tarjeta-link">
+                    <div class="blog-tarjeta">
+                        <div class="blog-imagen">
+                            <img src="assets/images/images-landing-page/BlogVacunacion.jpg" alt="Vacunación de mascotas">
+                            <div class="blog-hover"></div>
+                        </div>
+                        <h3>Vacunación de mascotas: Prevención de enfermedades mortales</h3>
+                        <p>Vacunación de mascotas: Protege a tu familia y a tu mascota de enfermedades mortales...</p>
+                        <p class="blog-autor">BY BUCKY´S VET</p>
+                        <p class="blog-fecha">02 SEPTEMBER 2024</p>
                     </div>
-                    <h3>Vacunación de mascotas: Prevención de enfermedades mortales</h3>
-                    <p>Vacunación de mascotas: Protege a tu familia y a tu mascota de enfermedades mortales...</p>
-                    <p class="blog-autor">BY BUCKY´S VET</p>
-                    <p class="blog-fecha">02 SEPTEMBER 2024</p>
-                </div>
+                 </a>
+                
             </div>
         </section>
     </main>

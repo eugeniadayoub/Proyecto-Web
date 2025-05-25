@@ -42,7 +42,16 @@ import { ModificarVeterinarioComponent } from './veterinarios/modificar-veterina
 import { InformacionVeterinariosComponent } from './veterinarios/informacion-veterinarios/informacion-veterinarios.component';
 import { DetallesVeterinarioComponent } from './veterinarios/detalles-veterinario/detalles-veterinario.component';
 import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
-
+import { BlogPageComponent } from './paginas/blog/blog-page/blog-page.component';
+import { OtitisEnPerrosComponent } from './paginas/blog/blog-page/otitis-en-perros/otitis-en-perros.component';
+import { DesparacitacionDeMascotasComponent } from './paginas/blog/blog-page/desparacitacion-de-mascotas/desparacitacion-de-mascotas.component';
+import { VacunacionMascotasComponent } from './paginas/blog/blog-page/vacunacion-mascotas/vacunacion-mascotas.component';
+import { SobrepesoMascotasComponent } from './paginas/blog/blog-page/sobrepeso-mascotas/sobrepeso-mascotas.component';
+import { GatificarTuCasaComponent } from './paginas/blog/blog-page/gatificar-tu-casa/gatificar-tu-casa.component';
+import { MejorarOlorPerrosComponent } from './paginas/blog/blog-page/mejorar-olor-perros/mejorar-olor-perros.component';
+import { ImportanciaDesparasitacionComponent } from './paginas/blog/blog-page/importancia-desparasitacion/importancia-desparasitacion.component';
+import { BeneficiosEsterilizarMascotaComponent } from './paginas/blog/blog-page/beneficios-esterilizar-mascota/beneficios-esterilizar-mascota.component';
+import { ViajarConMiMascotaComponent } from './paginas/blog/blog-page/viajar-con-mi-mascota/viajar-con-mi-mascota.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +90,17 @@ import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashbo
     ModificarVeterinarioComponent,
     InformacionVeterinariosComponent,
     DetallesVeterinarioComponent,
-    VeterinarioDashboardComponent
+    VeterinarioDashboardComponent,
+    BlogPageComponent,
+    OtitisEnPerrosComponent,
+    DesparacitacionDeMascotasComponent,
+    VacunacionMascotasComponent,
+    SobrepesoMascotasComponent,
+    GatificarTuCasaComponent,
+    MejorarOlorPerrosComponent,
+    ImportanciaDesparasitacionComponent,
+    BeneficiosEsterilizarMascotaComponent,
+    ViajarConMiMascotaComponent
   ],  
   imports: [
     BrowserModule,

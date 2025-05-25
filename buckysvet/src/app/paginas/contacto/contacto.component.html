@@ -86,7 +86,11 @@
                     <textarea id="mensaje" name="mensaje"></textarea>
 
                     <label for="archivo">Adjunta tu hoja de vida</label>
-                    <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx">
+                    <!-- Input oculto -->
+                    <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx" class="input-archivo" />
+
+                    <!-- Botón estilizado -->
+                    <label for="archivo" class="boton-postulacion">Subir archivo</label>
 
                     <button type="submit" class="boton-postulacion">POSTULARME</button>
                 </form>

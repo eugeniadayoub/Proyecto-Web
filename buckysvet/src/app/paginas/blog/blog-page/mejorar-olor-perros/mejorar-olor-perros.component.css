@@ -1,0 +1,161 @@
+.blog-post {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  padding-top: 140px; 
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.blog-post h1 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.blog-post h2,
+.blog-post h3,
+.blog-post h4 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.blog-post img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 6px;
+}
+
+.blog-post p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.blog-post blockquote {
+  font-style: italic;
+  background-color: #f3f3f3;
+  border-left: 5px solid #5EB896;
+  margin: 20px 0;
+  padding: 10px 20px;
+  color: #555;
+}
+
+.blog-post ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+
+.blog-post ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.blog-post strong {
+  font-weight: bold;
+}
+
+.blog-post hr {
+  margin: 40px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.enlace-verde {
+  color: #23969F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.enlace-verde:hover {
+  text-decoration: underline;
+}
+
+.blog-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: stretch;
+  padding: 0 20px;
+}
+
+.blog-tarjeta-link {
+  display: block;
+  flex: 1 1 calc(10%);
+  max-width: 230px;
+  min-width: 230px; 
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-tarjeta-link:hover .blog-tarjeta {
+  transform: scale(1.03);
+}
+
+.blog-tarjeta {
+  background-color: #cfd2d4;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.blog-imagen {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.blog-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.blog-tarjeta:hover .blog-hover {
+  opacity: 1;
+}
+
+.blog-contenido {
+  padding: 15px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.blog-contenido h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.blog-contenido p {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}

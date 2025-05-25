@@ -212,6 +212,11 @@
     resize: none;
 }
 
+/* Ocultar el input original */
+.input-archivo {
+    display: none;
+}
+
 /* Botón de Postulación */
 .boton-postulacion {
     background-color: black;

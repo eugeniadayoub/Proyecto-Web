@@ -81,6 +81,14 @@
     text-align: center;
 }
 
+.info-sede.oculta {
+  display: none;
+}
+
+.info-sede.visible {
+  display: block;
+}
+
 .sedes .containerSedes {
     max-width: 1100px;
     margin: 0 auto;

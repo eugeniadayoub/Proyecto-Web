@@ -11,7 +11,7 @@
         </div>
 
         <!-- Contenedor principal -->
-        <div class="contenedor-nutricion">
+        <div class="contenedor-nutricion" #contNutricion>
             <!-- Texto a la izquierda -->
             <div class="texto-nutricion1">
                 <h2>NUESTRAS ASESORÍAS EN NUTRICIÓN SON GRATIS, PIDE LA TUYA AHORA PARA TU MASCOTA</h2>
@@ -146,9 +146,9 @@
         </p>
 
         <div class="boton-container">
-            <a href="#formulario-nutricion" class="boton-asesoria">
-                ➜ SOLICITA UNA CITA GRATIS PARA ASESORÍA NUTRICIONAL
-            </a>
+            <button class="boton-asesoria" (click)="scrollToInfo()">
+                ➜ SOLICITA UNA CITA GRATIS PARA ASESORÍA NUTRICI   ONAL
+            </button>
         </div>
     </section>
 
@@ -175,7 +175,7 @@
             <div class="tarjeta-condicion peso-ideal">
                 <h3>PESO IDEAL</h3>
                 <div class="icono-mascota">
-                    <img src="assets/images/images-asesoria-nutricionpeso-ideal.png" alt="Peso ideal">
+                    <img src="assets/images/images-asesoria-nutricion/peso-ideal.png" alt="Peso ideal">
                 </div>
                 <p>Peso ideal según la edad de la mascota</p>
                 <strong>Las principales características son:</strong>
@@ -236,15 +236,15 @@
         </p>
         
         <div class="botones-tabla">
-            <button id="btnPerros" class="activo" onclick="mostrarTabla('perros')">TABLA CALÓRICA PARA PERROS</button>
-            <button id="btnGatos" onclick="mostrarTabla('gatos')">TABLA CALÓRICA PARA GATOS</button>
+            <button [class.activo]="mostrarPerros" (click)="mostrarTabla('perros')">TABLA CALÓRICA PARA PERROS</button>
+            <button [class.activo]="!mostrarPerros" (click)="mostrarTabla('gatos')">TABLA CALÓRICA PARA GATOS</button>
         </div>
-    
-        <div id="tablaPerros" class="tabla-mostrar">
+
+        <div *ngIf="mostrarPerros" class="tabla-mostrar">
             <img src="assets/images/images-asesoria-nutricion/tabla_calorica_perros.png" alt="Tabla Calórica Perros">
         </div>
-    
-        <div id="tablaGatos" class="tabla-oculta">
+
+        <div *ngIf="!mostrarPerros" class="tabla-mostrar">
             <img src="assets/images/images-asesoria-nutricion/tabla_calorica_gatos.png" alt="Tabla Calórica Gatos">
         </div>
 
@@ -262,9 +262,9 @@
             <img src="assets/images/images-asesoria-nutricion/enfermedades-mascotas.png" alt="Enfermedades Comunes en Mascotas">
         </div>
         <div class="boton-container">
-            <a href="#formulario-nutricion" class="boton-asesoria1">
+            <button class="boton-asesoria" (click)="scrollToInfo()">
                 ➜ SOLICITA UNA CITA GRATIS PARA ASESORÍA NUTRICIONAL
-            </a>
+            </button>
         </div>
     </section>
 </main>

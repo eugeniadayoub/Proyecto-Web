@@ -3,7 +3,7 @@
 <main>
 
     <!-- Sección de Información -->
-    <section class="info-banos">
+    <section class="info-banos" #infoBanos>
         <div class="texto-banos">
             <h2>UN CONCEPTO INNOVADOR EN BAÑO Y PELUQUERÍA</h2>
             <p>
@@ -67,7 +67,7 @@
                 <h2 class="info-pequeno">MENOS DE 10KG</h2>
                 <p><strong>Pelo Corto:</strong> $57.000</p>
                 <p><strong>Pelo Largo:</strong> $63.000</p>
-                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+                <button class="boton-cita" (click)="scrollToInfo()">SOLICITAR CITA</button>
             </div>
     
             <div class="carta">
@@ -76,7 +76,7 @@
                 <h2 class="info-mediano">ENTRE 10 Y 20KG</h2>
                 <p><strong>Pelo Corto:</strong> $63.000</p>
                 <p><strong>Pelo Largo:</strong> $67.000</p>
-                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+                <button class="boton-cita" (click)="scrollToInfo()">SOLICITAR CITA</button>
             </div>
     
             <div class="carta">
@@ -85,7 +85,7 @@
                 <h2 class="info-grande">ENTRE 20 Y 40KG</h2>
                 <p><strong>Pelo Corto:</strong> $79.000</p>
                 <p><strong>Pelo Largo:</strong> $91.000</p>
-                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+                <button class="boton-cita" (click)="scrollToInfo()">SOLICITAR CITA</button>
             </div>
     
             <div class="carta">
@@ -94,7 +94,7 @@
                 <h2 class="info-gigante">MÁS DE 40KG</h2>
                 <p><strong>Pelo Corto:</strong> $97.000</p>
                 <p><strong>Pelo Largo:</strong> $108.000</p>
-                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+                <button class="boton-cita" (click)="scrollToInfo()">SOLICITAR CITA</button>
             </div>
         </div>
     </section>
@@ -118,7 +118,7 @@
                 <p><strong>Limpieza superficial de dientes:</strong> $10.000</p>
 
                 <!-- Botón -->
-                <button class="boton-cita" onclick="redireccionarFormulario()">SOLICITAR CITA</button>
+                <button class="boton-cita" (click)="scrollToInfo()">SOLICITAR CITA</button>
             </div>
         </div>
     </section>

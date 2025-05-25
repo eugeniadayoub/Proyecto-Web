@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { MascotasComponent } from './mascotas/informacion-mascotas/mascotas.component';
 import { LandingPageComponent } from './paginas/landing/landing-page/landing-page.component';
 import { CrearMascotaComponent } from './mascotas/crear-mascota/crear-mascota.component';
@@ -16,7 +16,7 @@ import { LoginComponent } from './logins/login/login.component';
 import { PlanCuidadoPreventivoComponent } from './paginas/plan-cuidado-preventivo/plan-cuidado-preventivo.component';
 import { PlanMedicoIntegralComponent } from './paginas/plan-medico-integral/plan-medico-integral.component';
 import { PlanPacientesCronicosComponent } from './paginas/plan-pacientes-cronicos/plan-pacientes-cronicos.component';
-import { ProgramaCitaPresencialComponent } from './paginas/programa-cita-presencial/programa-cita-presencial.component';
+import { ProgramaCitaPresencialComponent } from './paginas/programa-cita-presencial/programa-cita-presencial.component';  
 import { SedesComponent } from './paginas/sedes/sedes.component';
 import { CrearDuenoComponent } from './duenos/crear-dueno/crear-dueno.component';
 import { DetallesDuenoComponent } from './duenos/detalles-dueno/detalles-dueno.component';
@@ -30,6 +30,16 @@ import { ModificarVeterinarioComponent } from './veterinarios/modificar-veterina
 import { InformacionVeterinariosComponent } from './veterinarios/informacion-veterinarios/informacion-veterinarios.component';
 import { DetallesVeterinarioComponent } from './veterinarios/detalles-veterinario/detalles-veterinario.component';
 import { VeterinarioDashboardComponent } from './veterinarios/veterinario-dashboard/veterinario-dashboard.component';
+import { BlogPageComponent } from './paginas/blog/blog-page/blog-page.component';
+import { OtitisEnPerrosComponent } from './paginas/blog/blog-page/otitis-en-perros/otitis-en-perros.component';
+import { DesparacitacionDeMascotasComponent } from './paginas/blog/blog-page/desparacitacion-de-mascotas/desparacitacion-de-mascotas.component';
+import { VacunacionMascotasComponent } from './paginas/blog/blog-page/vacunacion-mascotas/vacunacion-mascotas.component';
+import { SobrepesoMascotasComponent } from './paginas/blog/blog-page/sobrepeso-mascotas/sobrepeso-mascotas.component';
+import { GatificarTuCasaComponent } from './paginas/blog/blog-page/gatificar-tu-casa/gatificar-tu-casa.component';
+import { MejorarOlorPerrosComponent } from './paginas/blog/blog-page/mejorar-olor-perros/mejorar-olor-perros.component';
+import { ImportanciaDesparasitacionComponent } from './paginas/blog/blog-page/importancia-desparasitacion/importancia-desparasitacion.component';
+import { BeneficiosEsterilizarMascotaComponent } from './paginas/blog/blog-page/beneficios-esterilizar-mascota/beneficios-esterilizar-mascota.component';
+import { ViajarConMiMascotaComponent } from './paginas/blog/blog-page/viajar-con-mi-mascota/viajar-con-mi-mascota.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -62,10 +72,24 @@ const routes: Routes = [
   { path: 'veterinarios', component: InformacionVeterinariosComponent },
   { path: 'detalles-veterinario/:id', component: DetallesVeterinarioComponent },
   { path: 'veterinario-dashboard/:id', component: VeterinarioDashboardComponent },
+  { path: 'blog', component: BlogPageComponent },
+  { path: 'otitis-en-perros', component: OtitisEnPerrosComponent },
+  { path: 'desparacitacion-de-mascotas', component: DesparacitacionDeMascotasComponent },
+  { path: 'vacunacion-mascotas', component: VacunacionMascotasComponent },
+  { path: 'sobrepeso-mascotas', component: SobrepesoMascotasComponent },
+  { path: 'gatificar-tu-casa', component: GatificarTuCasaComponent },
+  { path: 'mejorar-olor-perros', component: MejorarOlorPerrosComponent },
+  { path: 'importancia-desparasitacion', component: ImportanciaDesparasitacionComponent },
+  { path: 'beneficios-esterilizar-mascota', component: BeneficiosEsterilizarMascotaComponent },
+  { path: 'viajar-con-mi-mascota', component: ViajarConMiMascotaComponent },
 ];
 
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'top', // <- esto asegura que navegue al inicio
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

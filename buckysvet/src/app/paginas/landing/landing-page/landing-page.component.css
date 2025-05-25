@@ -13,6 +13,7 @@
 }
 
 .hero img {
+    transition: opacity 1s ease-in-out;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,6 +91,10 @@
     background-color: #5EB896;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Sección de Contacto */
 .contacto {
     background-color: #dddddd;
@@ -114,10 +119,6 @@
     font-weight: bold;
     margin-bottom: 20px;
 }
-
-/* Formulario */
-
-/* --- Sección de contacto (formulario estilo “card”) --- */
 
 .contacto {
     background-color: #f9f9f9; /* Color de fondo para toda la sección */
@@ -637,6 +638,15 @@
 
 .blog-tarjeta:hover {
     transform: scale(1.05);
+}
+
+.blog-tarjeta-link {
+    display: block;
+    flex: 1 1 calc(33.333% - 20px); /* Ocupa 1/3 menos el gap */
+    max-width: 320px;
+    min-width: 280px; /* evita que se encoja demasiado */
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Contenedor de imagen con hover */

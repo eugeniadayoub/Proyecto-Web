@@ -214,7 +214,9 @@
         </div>
 
         <div class="boton-contenedor">
-            <a href="#formulario-pacientes-cronicos" class="boton-mas-informacion">QUIERO MÁS INFORMACIÓN</a>
+            <button (click)="scrollToFormulario()" class="boton-mas-informacion">
+                QUIERO MÁS INFORMACIÓN
+            </button>
         </div>
     </section>
 
@@ -287,22 +289,16 @@
     
     <section class="aliados">
         <h2>EL PROGRAMA DE PACIENTES CRÓNICOS ES POSIBLE GRACIAS A NUESTROS ALIADOS:</h2>
-        
+
         <div class="carrusel-container">
-            <button class="prev" onclick="moverCarrusel(-1)">&#10094;</button>
-            <div class="carrusel">
-                <img src="assets/images/images-plan-pacientes-cronicos/royal_canin.png" alt="Royal Canin">
-                <img src="assets/images/images-plan-pacientes-cronicos/pro_plan.png" alt="Pro Plan">
-                <img src="assets/images/images-plan-pacientes-cronicos/heel_vet.png" alt="Heel Vet">
-                <img src="assets/images/images-plan-pacientes-cronicos/veslab.png" alt="VesLab">
-                <img src="assets/images/images-landing-page/Buckys_Vet_LOGO_y_NOMBRE.jpg" alt="Bucky's Vet">
-                <img src="assets/images/images-plan-pacientes-cronicos/elanco.png" alt="Elanco">
-                <img src="assets/images/images-plan-pacientes-cronicos/zoetis.png" alt="Zoetis">
-                <img src="assets/images/images-plan-pacientes-cronicos/boehringer.png" alt="Boehringer Ingelheim">
-            </div>
-            <button class="next" onclick="moverCarrusel(1)">&#10095;</button>
+                <button class="prev" (click)="moverCarrusel(-1)">&#10094;</button>
+                <div class="carrusel">
+                <img *ngFor="let imagen of imagenesVisibles" [src]="imagen.src" [alt]="imagen.alt">
+                </div>
+                <button class="next" (click)="moverCarrusel(1)">&#10095;</button>
         </div>
     </section>
+
 </main>
 
 <app-footer></app-footer>

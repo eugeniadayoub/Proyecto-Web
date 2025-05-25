@@ -1,77 +1,110 @@
-/* Contenedor principal centrado */
+/* Fondo de toda la página */
+.fondo-login {
+  background-color: #23969F;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del login con imagen al lado */
+.login-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden; /* para que la imagen y el contenedor estén unidos visualmente */
+}
+
+/* Imagen del perrito */
+.perro-imagen img {
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Formulario de login */
 .login-container {
-    position: fixed;               /* Posición fija respecto a la ventana */
-    top: 50%;                      /* Mover al 50% vertical */
-    left: 50%;                     /* Mover al 50% horizontal */
-    transform: translate(-50%, -50%); /* Centrar completamente */
-    
-    background: #23969F;
-    padding: 40px;
-    border-radius: 12px;    
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    width: 350px;
-    text-align: center;
+  background-color: white;
+  padding: 40px;
+  width: 500px;
+  height: auto;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Logo */
 .logo {
-    width: 80px;
-    height: 80px;
-    display: block;
-    margin: 0 auto 15px auto;
+  width: 140px;
+  height: 90px;
+  margin-bottom: 10px;
 }
 
-/* Título */
+/* Título y subtítulo */
 h2 {
-    color: white;
-    margin-bottom: 20px;
+  color: #23969F;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
-/* Campos de entrada */
+.subtitulo {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* Inputs */
 .input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-left: 14px;
-    margin-right: 14px;
+  margin-bottom: 18px;
 }
 
 input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: border 0.3s;
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s;
 }
 
 input:focus {
-    border: 2px solid #5EB896;
+  border-color: #5EB896;
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /* Botón */
 button {
-    width: 100%;    
-    padding: 12px;
-    background: #6bd0a9;
-    color: white;
-    border: none;
-    border-radius: 8px; 
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 20px;
-    transition: background 0.3s;
+  width: 100%;
+  padding: 12px;
+  background-color: #23969F; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background: #5EB896;
+  background-color: #5EB896;
 }
 
-/* Mensaje de error */
+/* Error */
 .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
+  color: #d9534f;
+  margin-top: 12px;
+  font-size: 14px;
 }
