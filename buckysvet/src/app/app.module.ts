@@ -31,7 +31,8 @@ import { PlanPacientesCronicosComponent } from './paginas/plan-pacientes-cronico
 import { ProgramaCitaPresencialComponent } from './paginas/programa-cita-presencial/programa-cita-presencial.component';
 import { SedesComponent } from './paginas/sedes/sedes.component';
 import { FormularioDuenoComponent } from './shared-duenos/formulario-dueno/formulario-dueno.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './service/jwt.interceptor';
 import { TratamientoComponent } from './tratamientos/registrar-tratamiento/registrar-tratamiento.component';
 import { DuenosmascotasComponent } from './duenos/duenos-mascotas/duenosmascotas.component';
 import { DashboardAdminComponent } from './paginas/dashboard-admin/dashboard-admin.component';
@@ -111,7 +112,13 @@ import { ViajarConMiMascotaComponent } from './paginas/blog/blog-page/viajar-con
     HttpClientModule,
     NgChartsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

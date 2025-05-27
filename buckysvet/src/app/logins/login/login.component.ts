@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   usuario: string = '';  
   tipoUsuario: string = ''; 
 
-  constructor(private router: Router, private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private router: Router, private http: HttpClient, private route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario') || '';  
@@ -64,6 +65,12 @@ export class LoginComponent implements OnInit {
         next: (res) => {
           console.log("Respuesta:", res);
           if (res.status === 'success') {
+            // Guardar el token JWT
+            if (res.token) {
+              this.authService.setToken(res.token);
+              console.log('Token JWT guardado para dueño');
+            }
+            
             // Verificar que la redirección contenga un ID
             const redirectUrl = res.redirectUrl;
             if (redirectUrl && redirectUrl.includes('/duenosmascotas/')) {
@@ -98,6 +105,12 @@ export class LoginComponent implements OnInit {
           console.log("Respuesta completa del login:", res);
   
           if (res.status === 'success') {
+            // Guardar el token JWT
+            if (res.token) {
+              this.authService.setToken(res.token);
+              console.log('Token JWT guardado para veterinario');
+            }
+            
             const redirectUrl = res.redirectUrl;
   
             if (redirectUrl && redirectUrl.includes('/veterinario-dashboard/')) {
